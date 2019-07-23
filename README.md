@@ -10,5 +10,5 @@ My Own Delphi-Collection ( Math )
 | File | Contents | 
 | --- | --- |
 | .gitignore | Git ignores the files in this file |
-|[CarreMagique](https://github.com/walwalwalides/Delphi-Collection-Thread/tree/master/CarreMagique)|Create and Define Your Own Thread| 
+|[CarreMagique](https://github.com/walwalwalides/Delphi-Collection-Thread/tree/master/CarreMagique)| Create Magic Square Solution Using Delphi 
 | README.md | The readme for this project|

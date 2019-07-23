@@ -1,14 +1,13 @@
 # CarreMagique
-- Create Carre Ma
-                                            - ( Ultimate Packer for eXecutables)                     
+- Create Magic Square Solution Using Delphi
+                                            - ( Dimension : 4/4)                     
 ![](CarreMagique.png) 
 
 
 
 # Features  
-- Auto search executable files in directory
-- Excellent compression ratio.
-- very fast decompression.
+- Auto Solve Magic square Problem . 
+
 
 
 
