@@ -40,7 +40,6 @@ procedure initOptions;
 procedure clearFieldData(f : byte);
 procedure clearDigit(f : byte);
 procedure enterDigit(f,n : byte; tp : TNrType);
-function testGameOK : word;
 procedure recalcFieldOptions;
 function checkEnd : boolean;
 function GetBit1(m : byte) : byte;
@@ -301,30 +300,6 @@ begin
    end;
 end;
 
-function testGameOK : word;
-var grpOptions : array[1..grouplimit] of byte;
-    i,lastfield,msk : byte;
-begin
- result := 0; //OK
- for i := 1 to maxgroup do grpOptions[i] := 0;
- i := 0;
- lastfield := HSize*VSize;
- repeat
-  inc(i);
-  with field[i] do
-   if options = 0 then result := $4000 or i//set error (no options in field)
-    else grpOptions[groupNr] := grpOptions[groupNr] or options;
- until (i = lastfield) or (result > 0);
- if result = 0 then
-  begin
-   i := 0;
-   repeat                                  //test missing options in groups
-    inc(i);
-    msk := optionmask[groupSize[i]] and (grpOptions[i] xor $3e);
-    if msk <>  0 then  result := $8000 or (msk shl 8) or i;
-   until (result > 0) or (i = maxgroup);
-  end; 
-end;
 
 
 

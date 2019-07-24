@@ -102,7 +102,7 @@ implementation
 
 {$R *.dfm}
 
-uses game_unit, uAbout;
+uses uCarreM, uAbout;
 
 type
   TPaintMode = (pmNone, pmPaint, pmErase);
@@ -127,6 +127,9 @@ var
   oldOpt: byte;
   oldField: byte; // <> 0 if selection
   isolve: Integer;
+  arrSolution: array [1 .. 16] of Integer;
+  markercount: byte = 0;
+  istart, iend: byte;
 
 procedure clearMarker; forward;
 procedure setMarker(n: byte); forward;
@@ -361,38 +364,87 @@ begin
     isol := isolve - 34;
     case f of
       1:
-        result := 1 + isol;
-      2:
-        result := 16;
-      3:
-        result := 10;
-      4:
-        result := 7;
-      5:
-        result := 6;
-      6:
-        result := 11;
-      7:
-        result := 13;
-      8:
-        result := 4 + isol;
-      9:
-        result := 15;
-      10:
-        result := 2 + isol;
-      11:
-        result := 8;
-      12:
-        result := 9;
-      13:
-        result := 12;
-      14:
-        result := 5;
-      15:
-        result := 3 + isol;
-      16:
-        result := 14;
+        begin
+          result := 1 + isol;
+          arrSolution[1] := result;
+        end;
 
+      2:
+        Begin
+          result := 16;
+          arrSolution[2] := result;
+        End;
+      3:
+        Begin
+          result := 10;
+          arrSolution[3] := result;
+        End;
+      4:
+        Begin
+          result := 7;
+          arrSolution[4] := result;
+        End;
+      5:
+        Begin
+          result := 6;
+          arrSolution[5] := result;
+        End;
+      6:
+        Begin
+          result := 11;
+          arrSolution[6] := result;
+        End;
+      7:
+        Begin
+          result := 13;
+          arrSolution[7] := result;
+        End;
+      8:
+        Begin
+          result := 4 + isol;
+          arrSolution[8] := result;
+        End;
+      9:
+        Begin
+          result := 15;
+          arrSolution[9] := result;
+        End;
+      10:
+        Begin
+          result := 2 + isol;
+          arrSolution[10] := result;
+        End;
+      11:
+        Begin
+          result := 8;
+          arrSolution[11] := result;
+        End;
+
+      12:
+        Begin
+          result := 9;
+          arrSolution[12] := result;
+        End;
+      13:
+        Begin
+          result := 12;
+          arrSolution[13] := result;
+        End;
+      14:
+        Begin
+          result := 5;
+          arrSolution[14] := result;
+        End;
+      15:
+        Begin
+          result := 3 + isol;
+          arrSolution[15] := result;
+        End;
+      16:
+        Begin
+          result := 14;
+          arrSolution[16] := result;
+        End;
     end;
   end;
 
@@ -504,44 +556,6 @@ begin
   end;
 end;
 
-procedure paintoptionmarks(h: THint3);
-// paint hint type 3 options
-// green: selecting
-// red  : to be removed
-var
-  i, fld, msk: byte;
-  X, Y, x1, y1: smallInt;
-  r: Trect;
-begin
-  with frmMain.PaintBox1.Canvas do
-  begin
-    pen.Width := 1;
-    brush.Style := bsClear;
-    for fld := 1 to 6 do
-      with h[fld] do
-        if h[fld].nr <> 0 then
-        begin
-          fieldNr2XY(X, Y, nr);
-          for i := 1 to 5 do
-          begin
-            msk := 1 shl i;
-            x1 := X + hop[i] - 1;
-            y1 := Y + vop[i];
-            r := rect(x1, y1, x1 + 10, y1 + 16);
-            if (msk and green) <> 0 then
-            begin
-              pen.color := $00E000;
-              rectangle(r);
-            end;
-            if (msk and red) <> 0 then
-            begin
-              pen.color := $0000FF;
-              rectangle(r);
-            end;
-          end; // for i
-        end; // with h[i]
-  end; // with frmMain..
-end;
 
 // low level control
 
@@ -556,11 +570,23 @@ end;
 
 procedure setMarker(n: byte);
 begin
-  clearMarker;
+  if (markercount = 2) then
+  begin
+    marker := istart;
+    clearMarker;
+    marker := iend;
+    clearMarker;
+
+    markercount := 0;
+    exit;
+
+  end;
+
   if n <> 0 then
   begin
     paintMarker(n, true);
     marker := n;
+    inc(markercount);
   end;
 end;
 
@@ -665,38 +691,6 @@ begin
   end; // case
 end;
 
-function checkOptions: boolean;
-// return true if
-// - no empty option fields
-// - no options missing in fields
-var
-  gameCheck: Word;
-  fld, grp, m, n: byte;
-begin
-  gameCheck := testGameOK;
-  if gameCheck = 0 then
-  begin
-    result := true;
-    exit;
-  end;
-  //
-  result := false;
-  if (gameCheck and $4000) <> 0 then
-  begin
-    fld := gameCheck and $FF;
-    postmessage('no options in field ');
-    paintSolutionField(fld);
-  end;
-  if (gameCheck and $8000) <> 0 then
-  begin
-    grp := gameCheck and $FF;
-    m := (gameCheck and $3F00) shr 8;
-    n := getBit1(m);
-    postmessage('option ' + inttostr(n) + ' missing in group ');
-    paintSolutionGroup(grp);
-  end; // if
-end;
-
 procedure clearGameDigits(nt: TNrType);
 var
   i: byte;
@@ -716,10 +710,11 @@ begin
     end;
 end;
 
-procedure ClearGame;
+procedure ClearCM;
 var
   i: byte;
 begin
+
   for i := 1 to HSize * VSize do
     with field[i] do
     begin
@@ -765,9 +760,10 @@ begin
   case gm of
     gmGridBtn:
       begin
-        ClearGame;
+        ClearCM;
         repaintFields;
         setCarreMStatus(gsGrid);
+
       end;
     gmSolutionBtn:
       case CarreMStatus of
@@ -834,7 +830,6 @@ procedure addOrgNumber(fld, nr: byte);
 // common code to  enter org game digit
 begin
   enterdigit(fld, nr, ntOrg);
-  checkOptions;
   repaintFields;
 end;
 
@@ -846,6 +841,11 @@ procedure TfrmMain.PaintBox1MouseDown(Sender: TObject; Button: TMouseButton; Shi
 var
   col, row, xmod, ymod: byte;
   center: boolean;
+
+  iposArr: Integer;
+  iSum: Integer;
+  i: Integer;
+  boolSimple: boolean;
 begin
 
   with frmMain.PaintBox1 do
@@ -868,6 +868,84 @@ begin
           begin
             // if center then
             setMarker(1 + col + row * HSize);
+            case row of
+              0:
+                iposArr := 1 + col + row;
+
+              1:
+                iposArr := 4 + col + row;
+
+              2:
+                iposArr := 7 + col + row;
+
+              3:
+                iposArr := 10 + col + row;
+
+            end;
+
+            if (markercount = 0) then
+            begin
+              iSum := 0;
+            end;
+
+            if (markercount = 1) then
+            begin
+              istart := iposArr;
+              iend := iposArr;
+              iSum := 0;
+            end;
+            if (markercount = 2) then
+            begin
+              iend := iposArr;
+              iSum := 0;
+            end;
+
+            boolSimple := ((istart = 1) and (iend = 4)) or ((istart = 1) and (iend = 13)) or ((istart = 5) and (iend = 8)) or ((istart = 9) and (iend = 12)) or
+              ((istart = 4) and (iend = 13)) or ((istart = 13) and (iend = 16)) or ((istart = 2) and (iend = 14)) or ((istart = 3) and (iend = 15)) or
+              ((istart = 4) and (iend = 16)) or ((istart = 1) and (iend = 16));
+
+            if (boolSimple = true) then
+            begin
+              if (iend - istart = 3) then
+              begin
+                for i := istart to iend do
+                Begin
+                  iSum := iSum + arrSolution[i];
+                End;
+              end
+              else if (iend - istart = 12) then
+              begin
+                for i := istart to iend do
+                Begin
+                  if (i mod 4 = istart mod 4) then
+                    iSum := iSum + arrSolution[i];
+                End;
+
+              end
+              else if (iend - istart = 15) then
+              begin
+                for i := istart to iend do
+                Begin
+                  if (i mod 5 = istart mod 5) then
+                    iSum := iSum + arrSolution[i];
+                End;
+
+              end
+              else if (iend - istart = 9) then
+              begin
+                for i := istart to iend do
+                Begin
+                  if (i mod 3 = istart mod 3) then
+                    iSum := iSum + arrSolution[i];
+                End;
+
+              end;
+
+              msglabel.Caption := iSum.ToString;
+            end
+            else
+              msglabel.Caption := arrSolution[iend].ToString;
+
           end
           else
             addOrgNumber(oldField, oldOpt);
@@ -986,10 +1064,11 @@ end;
 
 procedure TfrmMain.solutionBtnClick(Sender: TObject);
 begin
+
   isolve := strtoint(edtNumber.Text);
   if ((HSize = 4) and (VSize = 4) and (isolve >= 34)) then
   begin
-    CarreMControl(gmGridBtn);
+//    CarreMControl(gmGridBtn);
     CarreMControl(gmSolutionBtn);
     CarreMStatus := gsSolution;
   end
@@ -1017,6 +1096,7 @@ begin
   // activecontrol := nil;
   // CarreMControl(gmClearBtn);
   CarreMControl(gmGridBtn);
+  setPaintbox1Dimensions;
 
 end;
 
@@ -1053,6 +1133,8 @@ begin
   CarreMControl(gmSolutionBtn);
 
 end;
+
+
 
 procedure TfrmMain.CheckBox1Click(Sender: TObject);
 begin
@@ -1095,7 +1177,7 @@ begin
 
   setCarreMStatus(gsGrid);
   initGridEdges;
-  ClearGame;
+  ClearCM;
   activecontrol := nil;
 end;
 

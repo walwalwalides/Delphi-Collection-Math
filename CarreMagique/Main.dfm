@@ -51,7 +51,7 @@ object frmMain: TfrmMain
     Top = 503
     Width = 185
     Height = 105
-    Caption = 'Solution'
+    Caption = 'Number :'
     TabOrder = 0
     object solutionBtn: TSpeedButton
       Left = 55
@@ -74,10 +74,12 @@ object frmMain: TfrmMain
     end
     object edtNumber: TEdit
       AlignWithMargins = True
-      Left = 5
+      Left = 22
       Top = 18
-      Width = 175
+      Width = 141
       Height = 21
+      Margins.Left = 20
+      Margins.Right = 20
       Align = alTop
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -90,6 +92,8 @@ object frmMain: TfrmMain
       Text = 'edtNumber'
       OnChange = edtNumberChange
       OnKeyDown = edtNumberKeyDown
+      ExplicitLeft = 64
+      ExplicitWidth = 116
     end
   end
   object GrBoxDimension: TGroupBox
