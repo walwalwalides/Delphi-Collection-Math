@@ -205,6 +205,53 @@ begin
   end;
 end;
 
+procedure paintline(f: byte; switch: boolean);
+// use markcolor if switch=true else white
+var
+  i: byte;
+  X, Y, x1, y1, x2, y2: smallInt;
+  boolDraw: boolean;
+begin
+  boolDraw := ((istart=1)and(f = 4)) or ((istart=1)and(f = 13)) or ((istart=5)and(f = 8)) or ((istart=9)and(f = 12)) or ((istart=1)and(f = 16))
+  or ((istart=2)and(f = 14))or ((istart=3)and(f = 15))  or ((istart=4)and(f = 13))or ((istart=4)and(f = 16));
+  if boolDraw=False then exit;
+
+  fieldNr2XY(X, Y, f);
+  x1 := X + 2;
+  y1 := Y + 2;
+  x2 := x1 + fieldsize - 4;
+  y2 := y1 + fieldsize - 4;
+  with frmMain.PaintBox1.Canvas do
+  begin
+    pen.Width := 1;
+    if switch then
+      pen.color := $0000FF
+    else
+      pen.color := $FFFFFF;
+    for i := 0 to 0 do
+    begin
+      moveto(x1 + i, y1 + i);
+
+      case istart of
+        1 .. 4:
+          y2 := 1;
+        5 .. 8:
+          y2 := 2;
+        9 .. 12:
+          y2 := 3;
+        13 .. 16:
+          y2 := 4;
+
+      end;
+      lineto(48 * istart, 48 * y2);
+      // lineto(x1 + i, y2 - i);
+      // lineto(x2 - i, y2 - i);
+      // lineto(x2 - i, y1 + i);
+      // lineto(x1 + i, y1 + i);
+    end;
+  end;
+end;
+
 procedure paintEmptyField(f: byte);
 var
   X, Y: smallInt;
@@ -563,31 +610,36 @@ procedure clearMarker;
 begin
   if marker <> 0 then
   begin
-    paintMarker(marker, false);
+    paintMarker(marker, False);
     marker := 0;
   end;
 end;
 
 procedure setMarker(n: byte);
 begin
+
   if (markercount = 2) then
   begin
     marker := istart;
+    paintline(iend, False);
     clearMarker;
     marker := iend;
     clearMarker;
 
     markercount := 0;
     exit;
-
   end;
 
   if n <> 0 then
   begin
+    if (markercount = 1) then
+      paintline(n, true);
+
     paintMarker(n, true);
     marker := n;
     inc(markercount);
   end;
+
 end;
 
 procedure advanceMarker;
@@ -633,10 +685,10 @@ begin
     with field[i] do
       if marked then
       begin
-        marked := false;
+        marked := False;
         paintField(i);
       end;
-  SolutionMark := false;
+  SolutionMark := False;
 end;
 
 procedure setPaintbox1Dimensions;
@@ -667,11 +719,11 @@ function builtGroups: boolean;
 var
   m: byte;
 begin
-  result := false;
+  result := False;
   if SolutionMark then
   begin
     repaintFields;
-    SolutionMark := false;
+    SolutionMark := False;
   end;
   m := initGroups;
   case m shr 6 of
@@ -704,7 +756,7 @@ begin
       begin
         nr := 0;
         nrType := ntNone;
-        marked := false;
+        marked := False;
         options := optionmask[groupSize[groupNr]];
       end;
     end;
@@ -721,7 +773,7 @@ begin
       nr := 0;
       nrType := ntNone;
       groupNr := 0;
-      marked := false;
+      marked := False;
       options := 0;
     end;
 end;
@@ -749,7 +801,7 @@ begin
           frmMain.Caption := formMessage;
           msglabel.Caption := gridmessage;
           solutionBtn.Down := true;
-          EnableDimensionButtons(false);
+          EnableDimensionButtons(False);
         end;
     end; // case
 end;
@@ -794,7 +846,7 @@ begin
             begin
               initGridEdges;
               frmMain.PaintBox1.Invalidate;
-              SolutionMark := false;
+              SolutionMark := False;
               postmessage('');
             end;
           gsSolution:
@@ -1052,7 +1104,7 @@ end;
 
 procedure TfrmMain.hplusBtnMouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  Timer1.enabled := false;
+  Timer1.enabled := False;
 end;
 
 procedure TfrmMain.gridBtnClick(Sender: TObject);
@@ -1068,7 +1120,7 @@ begin
   isolve := strtoint(edtNumber.Text);
   if ((HSize = 4) and (VSize = 4) and (isolve >= 34)) then
   begin
-//    CarreMControl(gmGridBtn);
+    // CarreMControl(gmGridBtn);
     CarreMControl(gmSolutionBtn);
     CarreMStatus := gsSolution;
   end
@@ -1134,8 +1186,6 @@ begin
 
 end;
 
-
-
 procedure TfrmMain.CheckBox1Click(Sender: TObject);
 begin
   activecontrol := nil;
@@ -1168,7 +1218,7 @@ procedure TfrmMain.FormCreate(Sender: TObject);
 begin
   edtNumber.Clear;
   edtNumber.NumbersOnly := true;
-  solutionBtn.enabled := false;
+  solutionBtn.enabled := False;
 
   HSize := 4;
   VSize := 4;
