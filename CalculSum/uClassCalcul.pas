@@ -43,7 +43,7 @@ uses
 function TCalcul.Add(Value: String): iCalcul;
 begin
 Result:= Self;
-FList.Add(Value.ToNumerico);
+FList.Add(Value.ToNumeric);
 end;
 
 function TCalcul.Add(Value: Integer): iCalcul;
@@ -71,14 +71,14 @@ end;
 
 function TCalcul.Display: iCalculDisplay;
 begin
-Result:= Self;
+ Result:= Self;
 end;
 
 
 
 function TCalcul.EndDisplay: iCalcul;
 begin
-Result:= Self;
+ Result:= Self;
 end;
 
 

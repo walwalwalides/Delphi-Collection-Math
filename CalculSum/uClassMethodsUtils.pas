@@ -16,11 +16,11 @@ uses
  type
 
  TCaptionHelper = record  Helper for TCaption
-  function ToNumerico : Double;
+  function ToNumeric : Double;
  end;
 
  TStrHelper = record Helper for String
- function ToNumerico : double;
+ function ToNumeric : double;
  end;
 implementation
 
@@ -29,14 +29,14 @@ uses
 
 { TCaptionHelper }
 
-function TCaptionHelper.ToNumerico: Double;
+function TCaptionHelper.ToNumeric: Double;
 begin
 Result:= StrToFloat(Self);
 end;
 
 { TStrHelper }
 
-function TStrHelper.ToNumerico: double;
+function TStrHelper.ToNumeric: double;
 begin
 Result:= StrtoFloat(Self);
 end;

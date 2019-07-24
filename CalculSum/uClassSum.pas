@@ -48,7 +48,7 @@ begin
   begin
     Result := FList[0].ToString;
     for I := 1 to FList.Count - 1 do
-      Result := (Result.ToNumerico + FList[I]).ToString;
+      Result := (Result.ToNumeric + FList[I]).ToString;
     DisplayValue(Result);
   end;
   inherited;
