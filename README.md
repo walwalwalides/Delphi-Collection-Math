@@ -13,3 +13,9 @@ My Own Delphi-Collection ( Math )
 |[CarreMagique](https://github.com/walwalwalides/Delphi-Collection-Math/tree/master/CarreMagique)| Create Magic Square Solution Using Delphi 
 |[CalculSum](https://github.com/walwalwalides/Delphi-Collection-Math/tree/master/CalculSum)| A simpler Way To Write Addition Operations Using Object Oriented Programming (OOPs)                                                              
 | README.md | The readme for this project|
+
+------
+
+# If You Want To Donate!
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=Y79F36A9BGLHS&source=url)
