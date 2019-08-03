@@ -1,5 +1,5 @@
 # CalculSum
-- A simpler Way To Write Addition Operations Using Object Oriented Programming(OOPs).                                                              
+- A Simple Way To Write Addition Operations Using Object Oriented Programming(OOPs).                                                              
 ![](CalculSum.png) 
 
 
