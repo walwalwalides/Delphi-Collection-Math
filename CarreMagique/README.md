@@ -1,7 +1,7 @@
 # CarreMagique
 - Create Magic Square Solution Using Delphi
                                             - ( Dimension : 4/4)                     
-![](CarreMagique.png) 
+![](CarreMagique_.png) 
 
 
 
