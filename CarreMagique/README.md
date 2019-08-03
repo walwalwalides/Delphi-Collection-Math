@@ -6,7 +6,7 @@
 
 
 # Features  
-- Auto Solve Magic square Problem . 
+- Auto Solve Magic Square Problem . 
 
 
 
