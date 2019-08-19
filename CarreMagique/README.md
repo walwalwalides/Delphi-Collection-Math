@@ -27,3 +27,8 @@
 | CarreMagique.dpk | The compiler project file |
 | CarreMagique.dproj | The MSBUILD project file |
 | README.md | The readme for this project |
+
+## To Install the Software:
+
+### Install CarreMagique 
+Download Link : https://github.com/walwalwalides/Delphi-Collection-Math/releases/download/CarreMagique/CarreMagique.7z
