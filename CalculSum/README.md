@@ -33,4 +33,4 @@
 ## To Install the Software:
 
 ### Install CalculSum 
-Download Link : https://github.com/walwalwalides/Delphi-Collection-VCL/releases/download/CalculSum/CalculSum.7z
+Download Link : https://github.com/walwalwalides/Delphi-Collection-Math/releases/download/CalculSum/CalculSum.7z
