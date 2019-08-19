@@ -5,7 +5,7 @@
 
 
 # Features  
-- Implimentation Of Design Pattern That Allows You To Think About Problems In Terms Of Objects and Their Interactions. . 
+- Implimentation Of Design Pattern That Allows You To Think About Problems In Terms Of Objects and Their Interactions.
 
 
 
@@ -28,3 +28,9 @@
 | CalculSum.dpk | The compiler project file |
 | CalculSum.dproj | The MSBUILD project file |
 | README.md | The readme for this project |
+
+
+## To Install the Software:
+
+### Install CalculSum 
+Download Link : https://github.com/walwalwalides/Delphi-Collection-VCL/releases/download/CalculSum/CalculSum.7z
