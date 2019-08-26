@@ -9,10 +9,10 @@ My Own Delphi-Collection ( Math )
 
 | File | Contents | 
 | --- | --- |
-| .gitignore | Git ignores the files in this file |
+| .gitignore | Git ignores the Files in this File |
 |[CarreMagique](https://github.com/walwalwalides/Delphi-Collection-Math/tree/master/CarreMagique)| Create Magic Square Solution Using Delphi 
 |[CalculSum](https://github.com/walwalwalides/Delphi-Collection-Math/tree/master/CalculSum)| A simpler Way To Write Addition Operations Using Object Oriented Programming (OOPs)                                                              
-| README.md | The readme for this project|
+| README.md | The Readme for this Project|
 
 ------
 
