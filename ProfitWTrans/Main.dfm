@@ -112,6 +112,7 @@ object frmMain: TfrmMain
       Align = alClient
       Caption = 'pnlMain'
       TabOrder = 2
+      ExplicitLeft = 369
       DesignSize = (
         474
         149)
@@ -121,6 +122,12 @@ object frmMain: TfrmMain
         Width = 111
         Height = 13
         Caption = 'Number Of Transaction'
+      end
+      object Bevel1: TBevel
+        Left = -2
+        Top = 0
+        Width = 226
+        Height = 50
       end
       object btnResult: TButton
         AlignWithMargins = True
@@ -138,7 +145,7 @@ object frmMain: TfrmMain
         OnClick = btnResultClick
       end
       object SpedtTransaction: TSpinEdit
-        Left = 131
+        Left = 135
         Top = 11
         Width = 81
         Height = 22
@@ -176,6 +183,7 @@ object frmMain: TfrmMain
     object actExit: TAction
       Category = 'File'
       Caption = 'Exit'
+      OnExecute = actExitExecute
     end
     object actCopyToClipboard: TAction
       Category = 'Edit'

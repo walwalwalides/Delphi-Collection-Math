@@ -54,10 +54,13 @@ type
     SpedtTransaction: TSpinEdit;
     pnlMain: TPanel;
     lblnbTransaction: TLabel;
+    Bevel1: TBevel;
     procedure btnResultClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure actAboutExecute(Sender: TObject);
+    procedure actExitExecute(Sender: TObject);
   private
+    function MaxProfit(var Price: array of integer; const k: integer; Amemo: TMemo): integer;
     { Private-Deklarationen }
   public
     { Public-Deklarationen }
@@ -74,7 +77,7 @@ uses
 
 {$R *.dfm}
 
-function MaxProfit(var Price: array of integer; const k: integer;
+function TfrmMain.MaxProfit(var Price: array of integer; const k: integer;
   Amemo: TMemo): integer;
 var
   profit: array of array of integer;
@@ -94,7 +97,7 @@ begin
     var
     prev_diff := Low(integer);
 
-    for var j := 0 to n do
+    for var j := 0 to n-1 do
     begin
       if ((I = 0) or (j = 0)) then
         profit[I][j] := 0
@@ -152,11 +155,23 @@ begin
   end;
 end;
 
+procedure TfrmMain.actExitExecute(Sender: TObject);
+begin
+  Application.Terminate;
+end;
+
 procedure TfrmMain.btnResultClick(Sender: TObject);
 begin
   memDisplay.Clear;
   var
   k := SpedtTransaction.Value;
+
+  for var j := 0 to 6 do
+  begin
+    var iWert:=StrToInt(strGridTransaction.Cells[J+1,1]);
+    Price[j]:=iWert;
+  end;
+
 
   var
   s := MaxProfit(Price, k, memDisplay);
@@ -168,6 +183,7 @@ begin
   frmMain.position := poMainFormCenter;
   frmMain.WindowState := wsMaximized;
   btnResult.Cursor:=crHandPoint;
+  strGridTransaction.Options := strGridTransaction.Options + [goEditing];
   memDisplay.Clear;
   pnlMain.Caption:='';
 
