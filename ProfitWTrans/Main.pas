@@ -62,6 +62,7 @@ type
     procedure actExitExecute(Sender: TObject);
   private
     function MaxProfit(var Price: array of integer; const k: integer; Amemo: TMemo): integer;
+    procedure &Initialization;
     { Private-Deklarationen }
   public
     { Public-Deklarationen }
@@ -77,6 +78,11 @@ uses
   System.Math, System.generics.collections, uAbout;
 
 {$R *.dfm}
+
+procedure TfrmMain.Initialization;
+begin
+//
+end;
 
 function TfrmMain.MaxProfit(var Price: array of integer; const k: integer;
   Amemo: TMemo): integer;
