@@ -55,6 +55,7 @@ type
     pnlMain: TPanel;
     lblnbTransaction: TLabel;
     Bevel1: TBevel;
+    //Decalration Of All Proceures
     procedure btnResultClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure actAboutExecute(Sender: TObject);
