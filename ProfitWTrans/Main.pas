@@ -1,5 +1,5 @@
 { ============================================
-  Software Name : 	ProfitWithTransac
+  Software Name : 	ProfitWTrans
   ============================================ }
 { ******************************************** }
 { Written By WalWalWalides                     }

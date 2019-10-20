@@ -63,7 +63,6 @@ object frmMain: TfrmMain
         Value = 20.000000000000000000
       end>
     TabOrder = 0
-    ExplicitHeight = 458
     object strGridTransaction: TStringGrid
       AlignWithMargins = True
       Left = 6
@@ -80,7 +79,6 @@ object frmMain: TfrmMain
       RowCount = 2
       FixedRows = 0
       TabOrder = 0
-      ExplicitTop = 7
       RowHeights = (
         24
         24)
@@ -100,10 +98,6 @@ object frmMain: TfrmMain
       Lines.Strings = (
         'memDisplay')
       TabOrder = 1
-      ExplicitLeft = 1
-      ExplicitTop = 167
-      ExplicitWidth = 483
-      ExplicitHeight = 125
     end
     object pnlMain: TPanel
       AlignWithMargins = True
@@ -118,10 +112,6 @@ object frmMain: TfrmMain
       Align = alClient
       Caption = 'pnlMain'
       TabOrder = 2
-      ExplicitLeft = 520
-      ExplicitTop = 24
-      ExplicitWidth = 298
-      ExplicitHeight = 77
       DesignSize = (
         474
         149)

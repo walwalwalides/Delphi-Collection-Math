@@ -87,6 +87,7 @@
         <VerInfo_Locale>1033</VerInfo_Locale>
         <DCC_DcuOutput>DCU</DCC_DcuOutput>
         <DCC_ExeOutput>.\exe</DCC_ExeOutput>
+        <Icon_MainIcon>ProfitWTrans_Icon.ico</Icon_MainIcon>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
