@@ -112,7 +112,6 @@ object frmMain: TfrmMain
       Align = alClient
       Caption = 'pnlMain'
       TabOrder = 2
-      ExplicitLeft = 369
       DesignSize = (
         474
         149)

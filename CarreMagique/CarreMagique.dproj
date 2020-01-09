@@ -3,7 +3,7 @@
         <ProjectGuid>{95D5FBFC-AAEE-4639-AD69-CB51828BB6B4}</ProjectGuid>
         <MainSource>CarreMagique.dpr</MainSource>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Config Condition="'$(Config)'==''">Release</Config>
         <TargetedPlatforms>1</TargetedPlatforms>
         <AppType>Application</AppType>
         <FrameworkType>VCL</FrameworkType>
@@ -88,6 +88,9 @@
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppDPIAwarenessMode>PerMonitor</AppDPIAwarenessMode>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <Icon_MainIcon>CarreMagique_Icon.ico</Icon_MainIcon>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
@@ -135,14 +138,7 @@
                 <Source>
                     <Source Name="MainSource">CarreMagique.dpr</Source>
                 </Source>
-                <Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Walid\Downloads\Create bpl Package\example2\Package2.bpl">Datei C:\Users\Walid\Downloads\Create bpl Package\example2\Package2.bpl nicht gefunden</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\18.0\Bpl\CPortLib8.bpl">Datei C:\Users\Public\Documents\Embarcadero\Studio\18.0\Bpl\CPortLib8.bpl nicht gefunden</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\18.0\Bpl\Vote.bpl">Datei C:\Users\Public\Documents\Embarcadero\Studio\18.0\Bpl\Vote.bpl nicht gefunden</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\18.0\Bpl\DAV_DSP_D11.bpl">Datei C:\Users\Public\Documents\Embarcadero\Studio\18.0\Bpl\DAV_DSP_D11.bpl nicht gefunden</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\18.0\Bpl\Swipe.bpl">Datei C:\Users\Public\Documents\Embarcadero\Studio\18.0\Bpl\Swipe.bpl nicht gefunden</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dclqrd_DXE10_1.bpl">QRDesign design-time</Excluded_Packages>
-                </Excluded_Packages>
+                <Excluded_Packages/>
             </Delphi.Personality>
             <Platforms>
                 <Platform value="Win32">True</Platform>
