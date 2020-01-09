@@ -1,6 +1,6 @@
 # PradoxBirthday
 - Create Birthday Paradox Calculator.                                                              
-![](PradoxBirthday_.png) 
+![](ParadoxBirthday_.png) 
 
 
 
