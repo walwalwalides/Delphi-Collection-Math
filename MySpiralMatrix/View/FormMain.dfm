@@ -348,8 +348,8 @@ object MainForm: TMainForm
     end
   end
   object MainMenu: TMainMenu
-    Left = 544
-    Top = 336
+    Left = 568
+    Top = 240
     object N1: TMenuItem
       Caption = '&File'
       ShortCut = 16454
@@ -372,7 +372,7 @@ object MainForm: TMainForm
   object BalloonHint: TBalloonHint
     Delay = 100
     HideAfter = 100
-    Left = 536
-    Top = 288
+    Left = 528
+    Top = 256
   end
 end
