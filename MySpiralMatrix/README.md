@@ -1,13 +1,12 @@
-# StudNote
-- Save student grades and calculate the average                    
-![](StudNote_.png) 
+# MySpiralMatrix
+- Return all elements of the matrix in spiral order.                  
+![](MySpiralMatrix.png) 
 
 
 # Features  
 
-- Calculate the average of each students.
-- Save and Load student grades using inifile.
-- Create A Graph and export to Bitmap Fomat.
+- Print a given matrix in spiral form.
+
 
 
 ## Files
@@ -17,6 +16,6 @@
 | .gitignore | Git ignores the files in this file |
 | AboutSN.pas | Information view of the programme |
 | FormMain.pas | The main view of the programme |
-| StudNote.dpk | The compiler project file |
-| StudNote.dproj | The MSBUILD project file |
+| MySpiralMatrix.dpk | The compiler project file |
+| MySpiralMatrix.dproj | The MSBUILD project file |
 | README.md | The readme for this project |
