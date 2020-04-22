@@ -6,7 +6,7 @@
 # View
 - CorrectSynfunc :
 
-![](CorrectSynfunc.gif)
+![](Gif/CorrectSynfunc.gif)
 
 
 # Features  
