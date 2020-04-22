@@ -23,6 +23,8 @@ My Own Delphi-Collection ( Math )
 |[ProfitWTrans](https://github.com/walwalwalides/Delphi-Collection-Math/tree/master/ProfitWTrans)|Calculate Max Profit With x Numbers of Transactions Using Delphi.
 |[DrawTree](https://github.com/walwalwalides/Delphi-Collection-Math/tree/master/DrawTree)|A Simple Way To Draw a Tree.
 |[ParadoxBirthday](https://github.com/walwalwalides/Delphi-Collection-Math/tree/master/ParadoxBirthday)|Create Birthday Paradox Calculator.
+|[CorrectSynFunc](https://github.com/walwalwalides/Delphi-Collection-Math/tree/master/CorrectSynFunc)|Auto correct function syntax.
+
 | README.md | The Readme for this Project|
 
 
