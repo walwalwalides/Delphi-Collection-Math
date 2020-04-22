@@ -3,6 +3,11 @@
 
 ![](CorrectSynfunc.png) 
 
+# View
+- CorrectSynfunc :
+
+![](Gif/CorrectSynfunc.gif)
+
 
 # Features  
 
