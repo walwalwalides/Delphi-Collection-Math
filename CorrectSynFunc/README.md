@@ -1,7 +1,7 @@
 # CoorectSynFunc
 - Auto correct function syntax.    
 
-![](CoorectSynFunc.png) 
+![](CorrectSynFunc.png) 
 
 
 # Features  
