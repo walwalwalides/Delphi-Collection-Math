@@ -1,9 +1,9 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{2CDE22AE-5D1B-410C-956F-22CDDA482928}</ProjectGuid>
+        <ProjectGuid>{CE3DFC33-39DB-4DF3-854D-08BF6662A040}</ProjectGuid>
         <ProjectVersion>18.7</ProjectVersion>
         <FrameworkType>VCL</FrameworkType>
-        <MainSource>CorrectSynFunc.dpr</MainSource>
+        <MainSource>JumbArray.dpr</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
@@ -46,8 +46,8 @@
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
-        <DCC_DcuOutput>DCU</DCC_DcuOutput>
-        <DCC_ExeOutput>BIN</DCC_ExeOutput>
+        <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
+        <DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
         <DCC_E>false</DCC_E>
         <DCC_N>false</DCC_N>
         <DCC_S>false</DCC_S>
@@ -57,10 +57,10 @@
         <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
         <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
         <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
-        <SanitizedProjectName>CorrectSynFunc</SanitizedProjectName>
+        <SanitizedProjectName>JumbArray</SanitizedProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
-        <DCC_UsePackage>DBXSqliteDriver;dxFlowChartRS26;dxPSdxMapControlLnkRS26;DBXDb2Driver;RestDatawareCORE;vclactnband;dxBarRS26;vclFireDAC;dxFireDACEMFRS26;tethering;dxSpreadSheetInplaceRichEditRS26;FireDACADSDriver;JDLibComponents;JvPluginSystem;rtcSDK;tmswizdXE12;dxRichEditCoreRS26;dxPSdxSpreadSheetLnkRS26;HTLabelPackage;NxCollection6Dsgn_d10_2;OrpheusDR;FireDACMSSQLDriver;dwUrlaub;vcltouch;JvBands;vcldb;lmdrtchartdb;svn;dxPSTeeChartRS26;JvJans;dxGDIPlusRS26;JvDotNetCtrls;dxPSdxFCLnkRS26;lmdrtdialog;vclib;lmdrttools;dxCloudServiceLibraryRS26;frxTee26;lmdrtrtf;NxDBGrid6Run_d10_2;NxCollection6Run_d10_2;vclZipForged25;dxPSLnksRS26;FireDACDBXDriver;cxGridRS26;dxPsPrVwAdvRS26;dxPDFViewerRS26;RESTDWDriverFD;vclx;lmdrtelpro;dxPScxTLLnkRS26;lmdrtide;unidac260;EsVclCore;FrameStandPackage_10_3;Instructor;RESTDWDriverUNIDAC;RESTBackendComponents;VCLRESTComponents;fsTee26;NxLayout6Run_d10_2;vclie;bindengine;CloudService;dxmdsRS26;JvHMI;FireDACMySQLDriver;fsIBX26;dxdborRS26;frx26;DataSnapClient;rtcSDK_DBA;dxFireDACServerModeRS26;bindcompdbx;DBXSybaseASEDriver;IndyIPServer;cxPivotGridRS26;IndySystem;fsADO26;frxDBX26;cxTreeListdxBarPopupMenuRS26;dsnapcon;cxTreeListRS26;dxPScxPivotGridLnkRS26;VirtualTreesR;cxSchedulerRibbonStyleEventEditorRS26;dxPSCoreRS26;FireDACMSAccDriver;fmxFireDAC;FireDACInfxDriver;vclimg;lmdrtchart;dxSpreadSheetRS26;dxBarExtItemsRS26;dxPSdxGaugeControlLnkRS26;YxdUI;lmdrttxt;emshosting;Jcl;tmsdXE12;qrBarcodePkg;DBXOdbcDriver;FireDACTDataDriver;crcontrols260;dxdbtrRS26;dxRichEditControlCoreRS26;soaprtl;DbxCommonDriver;dxFlowChartAdvancedCustomizeFormRS26;FIBPlus_D26;JvManagedThreads;FMXTee;dxDockingRS26;xmlrtl;soapmidas;DataSnapNativeClient;fmxobj;cxLibraryRS26;JvTimeFramework;rtl;emsserverresource;DbxClientDriver;DclJDLibComponents;DBXSybaseASADriver;dxPScxSchedulerLnkRS26;dxSpreadSheetConditionalFormattingDialogsRS26;JvSystem;lmdrtprint;JvStdCtrls;appanalytics;lmdrtdocking;dxRibbonCustomizationFormRS26;cxSchedulerGridRS26;IndyIPClient;bindcompvcl;lmdrtsyntax;dxFlowChartLayoutsRS26;TeeUI;dxADOEMFRS26;JvDocking;JvPascalInterpreter;VclSmp;TMSFMXPackPkgDXE12;lmdrttxtdb;FireDACODBCDriver;dxRibbonRS26;DataSnapIndy10ServerTransport;dxPScxCommonRS26;JclVcl;dxRichEditDocumentModelRS26;MHLComponents;DataSnapProviderClient;FireDACMongoDBDriver;dxFlowChartDesignerRS26;JvControls;dxPScxGridLnkRS26;JvPrintPreview;lmdrtshell;lmdrtstorage;dxSpreadSheetCoreRS26;DamPackage;DataSnapServerMidas;RESTComponents;lmdrtweb;lmdrtsearch;ZComponent;DBXInterBaseDriver;dxPScxExtCommonRS26;ZCore;emsclientfiredac;dacfmx260;DataSnapFireDAC;svnui;lmdrtl;JvGlobus;dclZipForged25;DBXMSSQLDriver;JvMM;dxRichEditControlRS26;DatasnapConnectorsFreePascal;dxGaugeControlRS26;lmdrtbar;dxorgcRS26;dxPScxVGridLnkRS26;DWhtmlEditor;bindcompfmx;JvNet;DBXOracleDriver;inetdb;JvAppFrm;RaizeComponentsVcl;dxDBXServerModeRS26;dxBarDBNavRS26;FmxTeeUI;emsedge;RaizeComponentsVclDb;FireDACIBDriver;fmx;fmxdae;dxServerModeRS26;dxWizardControlRS26;vquery260;JvWizards;dacvcl260;dxTabbedMDIRS26;fs26;dxEMFRS26;dbexpress;IndyCore;lmdrtdesign;dxComnRS26;NxLayout6Dsgn_d10_2;frxIntIO26;NxGrid6Run_d10_2;JvPageComps;dsnap;DataSnapCommon;emsclient;lmdrtrtlx;FireDACCommon;OrpheusDBDR;JvDB;JDGitHubComponents;ZParseSql;frxcs26;lmdrtelcore;DataSnapConnectors;cxSchedulerTreeBrowserRS26;dxADOServerModeRS26;soapserver;cxPivotGridOLAPRS26;JclDeveloperTools;cxVerticalGridRS26;lmdrtinspector;lmdrtfx;dxtrmdRS26;FireDACOracleDriver;DBXMySQLDriver;cxSchedulerRS26;cxSchedulerWebServiceStorageRS26;dxPSdxLCLnkRS26;DBXFirebirdDriver;EsVclComponents;JvCmp;lmdrtsearchdb;NxInspector6Run_d10_2;FireDACCommonODBC;FireDACCommonDriver;IpWorkZip;dxMapControlRS26;NxInspector6Dsgn_d10_2;frxIntIOIndy26;inet;dxSpellCheckerRS26;IndyIPCommon;JvCustom;dxSpreadSheetCoreConditionalFormattingDialogsRS26;vcl;dxPSdxDBOCLnkRS26;JvXPCtrls;frxDB26;FireDACDb2Driver;dxSpreadSheetReportDesignerRS26;lmdrtsys;dxPScxPCProdRS26;NxGrid6Dsgn_d10_2;tmsxlsdXE12;dxNavBarRS26;dxCoreRS26;fsDB26;cxExportRS26;unidacvcl260;FireDAC;dxHttpIndyRequestRS26;TeeDB;dxPSPrVwRibbonRS26;JvCore;NxStandard6Dsgn_d10_2;frxe26;ZDbc;JvCrypt;FireDACSqliteDriver;FireDACPgDriver;ibmonitor;FireDACASADriver;dxPSRichEditControlLnkRS26;cxPivotGridChartRS26;frxIBX26;JvDlgs;JvRuntimeDesign;ArabicTreeVeiw_D7;dxPSDBTeeChartRS26;ibxpress;Tee;DataSnapServer;ibxbindings;dxPSdxDBTVLnkRS26;MREnter;dac260;vclwinx;FireDACDSDriver;lmdrtrtfdb;frxADO26;tmsexdXE12;dxTileControlRS26;dxSkinsCoreRS26;CustomIPTransport;vcldsnap;RESTDWDriverZEOS;bindcomp;ZPlain;dxPSdxOCLnkRS26;DBXInformixDriver;Package;frce;SynEdit_R;acntDX10Rio_R;NxStandard6Run_d10_2;dbxcds;KernowSoftwareFMX;adortl;NxDBGrid6Dsgn_d10_2;unidacfmx260;dxSpreadSheetCoreDialogsRS26;dxBarExtDBItemsRS26;dsnapxml;dbrtl;inetdbxpress;IndyProtocols;dxPSdxPDFViewerLnkRS26;dxRichEditInplaceRS26;HGMComponents;NewAC_XE10;lmdrtcore;fmxase;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_UsePackage>DBXSqliteDriver;dxFlowChartRS26;dxPSdxMapControlLnkRS26;DBXDb2Driver;RestDatawareCORE;vclactnband;dxBarRS26;vclFireDAC;dxFireDACEMFRS26;tethering;dxSpreadSheetInplaceRichEditRS26;FireDACADSDriver;JDLibComponents;JvPluginSystem;rtcSDK;tmswizdXE12;dxRichEditCoreRS26;dxPSdxSpreadSheetLnkRS26;HTLabelPackage;NxCollection6Dsgn_d10_2;OrpheusDR;FireDACMSSQLDriver;dwUrlaub;vcltouch;JvBands;vcldb;lmdrtchartdb;svn;dxPSTeeChartRS26;JvJans;dxGDIPlusRS26;JvDotNetCtrls;dxPSdxFCLnkRS26;lmdrtdialog;vclib;lmdrttools;dxCloudServiceLibraryRS26;frxTee26;lmdrtrtf;NxDBGrid6Run_d10_2;NxCollection6Run_d10_2;vclZipForged25;dxPSLnksRS26;FireDACDBXDriver;cxGridRS26;dxPsPrVwAdvRS26;dxPDFViewerRS26;RESTDWDriverFD;vclx;lmdrtelpro;dxPScxTLLnkRS26;DzSocket;lmdrtide;unidac260;EsVclCore;FrameStandPackage_10_3;Instructor;RESTDWDriverUNIDAC;RESTBackendComponents;VCLRESTComponents;fsTee26;NxLayout6Run_d10_2;vclie;bindengine;CloudService;dxmdsRS26;JvHMI;FireDACMySQLDriver;fsIBX26;dxdborRS26;frx26;DataSnapClient;rtcSDK_DBA;dxFireDACServerModeRS26;bindcompdbx;DBXSybaseASEDriver;IndyIPServer;cxPivotGridRS26;IndySystem;fsADO26;frxDBX26;cxTreeListdxBarPopupMenuRS26;dsnapcon;cxTreeListRS26;dxPScxPivotGridLnkRS26;VirtualTreesR;cxSchedulerRibbonStyleEventEditorRS26;dxPSCoreRS26;FireDACMSAccDriver;fmxFireDAC;FireDACInfxDriver;vclimg;lmdrtchart;dxSpreadSheetRS26;dxBarExtItemsRS26;dxPSdxGaugeControlLnkRS26;YxdUI;lmdrttxt;emshosting;Jcl;tmsdXE12;qrBarcodePkg;DBXOdbcDriver;FireDACTDataDriver;crcontrols260;dxdbtrRS26;dxRichEditControlCoreRS26;soaprtl;DbxCommonDriver;dxFlowChartAdvancedCustomizeFormRS26;FIBPlus_D26;JvManagedThreads;FMXTee;dxDockingRS26;xmlrtl;soapmidas;DataSnapNativeClient;fmxobj;cxLibraryRS26;JvTimeFramework;rtl;emsserverresource;DbxClientDriver;DclJDLibComponents;DBXSybaseASADriver;dxPScxSchedulerLnkRS26;dxSpreadSheetConditionalFormattingDialogsRS26;JvSystem;lmdrtprint;JvStdCtrls;appanalytics;lmdrtdocking;dxRibbonCustomizationFormRS26;cxSchedulerGridRS26;IndyIPClient;bindcompvcl;lmdrtsyntax;dxFlowChartLayoutsRS26;TeeUI;dxADOEMFRS26;JvDocking;JvPascalInterpreter;VclSmp;TMSFMXPackPkgDXE12;lmdrttxtdb;FireDACODBCDriver;dxRibbonRS26;DataSnapIndy10ServerTransport;dxPScxCommonRS26;JclVcl;dxRichEditDocumentModelRS26;MHLComponents;DataSnapProviderClient;FireDACMongoDBDriver;dxFlowChartDesignerRS26;JvControls;dxPScxGridLnkRS26;JvPrintPreview;lmdrtshell;lmdrtstorage;dxSpreadSheetCoreRS26;DamPackage;DataSnapServerMidas;RESTComponents;lmdrtweb;lmdrtsearch;ZComponent;DBXInterBaseDriver;dxPScxExtCommonRS26;ZCore;emsclientfiredac;dacfmx260;DataSnapFireDAC;svnui;lmdrtl;JvGlobus;dclZipForged25;DBXMSSQLDriver;JvMM;dxRichEditControlRS26;DatasnapConnectorsFreePascal;dxGaugeControlRS26;lmdrtbar;dxorgcRS26;dxPScxVGridLnkRS26;DWhtmlEditor;bindcompfmx;JvNet;DBXOracleDriver;inetdb;JvAppFrm;RaizeComponentsVcl;dxDBXServerModeRS26;dxBarDBNavRS26;FmxTeeUI;emsedge;RaizeComponentsVclDb;FireDACIBDriver;fmx;fmxdae;dxServerModeRS26;dxWizardControlRS26;vquery260;JvWizards;dacvcl260;dxTabbedMDIRS26;fs26;dxEMFRS26;dbexpress;IndyCore;lmdrtdesign;dxComnRS26;NxLayout6Dsgn_d10_2;frxIntIO26;NxGrid6Run_d10_2;JvPageComps;dsnap;DataSnapCommon;emsclient;lmdrtrtlx;FireDACCommon;OrpheusDBDR;JvDB;JDGitHubComponents;ZParseSql;frxcs26;lmdrtelcore;DataSnapConnectors;cxSchedulerTreeBrowserRS26;dxADOServerModeRS26;soapserver;cxPivotGridOLAPRS26;JclDeveloperTools;cxVerticalGridRS26;lmdrtinspector;lmdrtfx;dxtrmdRS26;FireDACOracleDriver;DBXMySQLDriver;cxSchedulerRS26;cxSchedulerWebServiceStorageRS26;dxPSdxLCLnkRS26;DBXFirebirdDriver;EsVclComponents;JvCmp;lmdrtsearchdb;NxInspector6Run_d10_2;FireDACCommonODBC;FireDACCommonDriver;IpWorkZip;dxMapControlRS26;NxInspector6Dsgn_d10_2;frxIntIOIndy26;inet;dxSpellCheckerRS26;IndyIPCommon;JvCustom;dxSpreadSheetCoreConditionalFormattingDialogsRS26;vcl;dxPSdxDBOCLnkRS26;JvXPCtrls;frxDB26;FireDACDb2Driver;dxSpreadSheetReportDesignerRS26;lmdrtsys;dxPScxPCProdRS26;NxGrid6Dsgn_d10_2;tmsxlsdXE12;dxNavBarRS26;dxCoreRS26;fsDB26;cxExportRS26;unidacvcl260;FireDAC;dxHttpIndyRequestRS26;TeeDB;dxPSPrVwRibbonRS26;JvCore;NxStandard6Dsgn_d10_2;frxe26;ZDbc;JvCrypt;FireDACSqliteDriver;FireDACPgDriver;ibmonitor;FireDACASADriver;dxPSRichEditControlLnkRS26;cxPivotGridChartRS26;frxIBX26;JvDlgs;JvRuntimeDesign;ArabicTreeVeiw_D7;dxPSDBTeeChartRS26;ibxpress;Tee;DataSnapServer;ibxbindings;dxPSdxDBTVLnkRS26;MREnter;dac260;vclwinx;FireDACDSDriver;lmdrtrtfdb;frxADO26;tmsexdXE12;dxTileControlRS26;dxSkinsCoreRS26;CustomIPTransport;vcldsnap;RESTDWDriverZEOS;bindcomp;ZPlain;dxPSdxOCLnkRS26;DBXInformixDriver;Package;frce;SynEdit_R;acntDX10Rio_R;NxStandard6Run_d10_2;dbxcds;KernowSoftwareFMX;adortl;NxDBGrid6Dsgn_d10_2;unidacfmx260;dxSpreadSheetCoreDialogsRS26;dxBarExtDBItemsRS26;dsnapxml;dbrtl;inetdbxpress;IndyProtocols;dxPSdxPDFViewerLnkRS26;dxRichEditInplaceRS26;HGMComponents;NewAC_XE10;lmdrtcore;fmxase;$(DCC_UsePackage)</DCC_UsePackage>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
         <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
@@ -85,7 +85,7 @@
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <Icon_MainIcon>CoorectSynFunc_Icon.ico</Icon_MainIcon>
+        <Icon_MainIcon>JumbArray_Icon.ico</Icon_MainIcon>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
@@ -101,10 +101,11 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="uValidParantheses.pas">
-            <Form>frmValidParantheses</Form>
+        <DCCReference Include="Main.pas">
+            <Form>frmMain</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="uJumbArray.pas"/>
         <DCCReference Include="View\AboutSN.pas">
             <Form>frmAboutSN</Form>
             <FormType>dfm</FormType>
@@ -127,7 +128,7 @@
         <BorlandProject>
             <Delphi.Personality>
                 <Source>
-                    <Source Name="MainSource">CorrectSynFunc.dpr</Source>
+                    <Source Name="MainSource">JumbArray.dpr</Source>
                 </Source>
                 <Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dcloffice2k260.bpl">Microsoft Office 2000 Beispiele für gekapselte Komponenten für Automatisierungsserver</Excluded_Packages>
@@ -137,9 +138,9 @@
                 </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="3">
-                <DeployFile LocalName="BIN\CorrectSynFunc.exe" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="Win32\Debug\JumbArray.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
-                        <RemoteName>CorrectSynFunc.exe</RemoteName>
+                        <RemoteName>JumbArray.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
