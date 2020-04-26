@@ -20,10 +20,12 @@ My Own Delphi-Collection ( Math )
 | .gitignore | Git ignores the Files in this File |
 |[CarreMagique](https://github.com/walwalwalides/Delphi-Collection-Math/tree/master/CarreMagique)| Create Magic Square Solution Using Delphi 
 |[CalculSum](https://github.com/walwalwalides/Delphi-Collection-Math/tree/master/CalculSum)| A simpler Way To Write Addition Operations Using Object Oriented Programming (OOPs)
-|[ProfitWTrans](https://github.com/walwalwalides/Delphi-Collection-Math/tree/master/ProfitWTrans)|Calculate Max Profit With x Numbers of Transactions Using Delphi.
-|[DrawTree](https://github.com/walwalwalides/Delphi-Collection-Math/tree/master/DrawTree)|A Simple Way To Draw a Tree.
-|[ParadoxBirthday](https://github.com/walwalwalides/Delphi-Collection-Math/tree/master/ParadoxBirthday)|Create Birthday Paradox Calculator.
-|[CorrectSynFunc](https://github.com/walwalwalides/Delphi-Collection-Math/tree/master/CorrectSynFunc)|Auto correct function syntax.
+|[ProfitWTrans](https://github.com/walwalwalides/Delphi-Collection-Math/tree/master/ProfitWTrans)| Calculate Max Profit With x Numbers of Transactions Using Delphi.
+|[DrawTree](https://github.com/walwalwalides/Delphi-Collection-Math/tree/master/DrawTree)| A Simple Way To Draw a Tree.
+|[ParadoxBirthday](https://github.com/walwalwalides/Delphi-Collection-Math/tree/master/ParadoxBirthday)| Create Birthday Paradox Calculator.
+|[CorrectSynFunc](https://github.com/walwalwalides/Delphi-Collection-Math/tree/master/CorrectSynFunc)| Auto correct function syntax.
+|[JumbArray](https://github.com/walwalwalides/Delphi-Collection-Math/tree/master/JumbArray)| Create a jumb array.
+
 | README.md | The Readme for this Project|
 
 
