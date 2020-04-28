@@ -2,7 +2,7 @@ program Researcher;
 
 uses
   Vcl.Forms,
-  Main in 'Main.pas' {frmMain},
+  Search in 'Search.pas' {frmSearch},
   uArrayhelper in 'uArrayhelper.pas',
   uClassPerson in 'uClassPerson.pas',
   About in 'View\About.pas' {frmAbout},
@@ -13,7 +13,7 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TfrmMain, frmMain);
+  Application.CreateForm(TfrmSearch, frmSearch);
   Application.CreateForm(TfrmAbout, frmAbout);
   Application.Run;
 end.

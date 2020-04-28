@@ -1,4 +1,4 @@
-object frmMain: TfrmMain
+object frmSearch: TfrmSearch
   Left = 0
   Top = 0
   Caption = 'Researcher'

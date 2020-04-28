@@ -7,7 +7,7 @@
 { Email : WalWalWalides@gmail.com }
 { GitHub :https://github.com/walwalwalides }
 { ******************************************** }
-unit Main;
+unit Search;
 
 interface
 
@@ -19,7 +19,7 @@ uses
   Vcl.Menus;
 
 type
-  TfrmMain = class(TForm)
+  TfrmSearch = class(TForm)
     edtInput: TEdit;
     lstboxResult: TListBox;
     lblName: TLabel;
@@ -69,7 +69,7 @@ type
   end;
 
 var
-  frmMain: TfrmMain;
+  frmSearch: TfrmSearch;
   BoolFound: Boolean = false;
   BoolCaseSensitive: Boolean = false;
   arrInput: TArrayRecord<TPersonRecord>;
@@ -153,7 +153,7 @@ begin
   end;
 end;
 
-procedure TfrmMain.SearchInListBox;
+procedure TfrmSearch.SearchInListBox;
 var
   sX, sY, sResult, stmp: string;
   I, m, n, iresult, itmp, iIndex: Integer;
@@ -226,12 +226,12 @@ begin
 
 end;
 
-procedure TfrmMain.btnResultClick(Sender: TObject);
+procedure TfrmSearch.btnResultClick(Sender: TObject);
 begin
   //
 end;
 
-procedure TfrmMain.edtInputChange(Sender: TObject);
+procedure TfrmSearch.edtInputChange(Sender: TObject);
 begin
   if (edtInput.Text = '') then
   Begin
@@ -242,7 +242,7 @@ begin
     SearchInListBox;
 end;
 
-procedure TfrmMain.edtInputKeyDown(Sender: TObject; var Key: Word;
+procedure TfrmSearch.edtInputKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
   if (Key = 13) then
@@ -253,7 +253,7 @@ begin
   Key := 0;
 end;
 
-procedure TfrmMain.edtInputKeyPress(Sender: TObject; var Key: Char);
+procedure TfrmSearch.edtInputKeyPress(Sender: TObject; var Key: Char);
 begin
   if (Key = #13) then
   Begin
@@ -262,7 +262,7 @@ begin
   End;
 end;
 
-procedure TfrmMain.FormCreate(Sender: TObject);
+procedure TfrmSearch.FormCreate(Sender: TObject);
 const
   cfLibrary = 'myLibrary.txt';
 begin
@@ -277,7 +277,7 @@ begin
 
 end;
 
-procedure TfrmMain.I1Click(Sender: TObject);
+procedure TfrmSearch.I1Click(Sender: TObject);
 begin
   frmAbout.show;
 end;
@@ -287,7 +287,7 @@ begin
   Result := lowercase(Value) <> '';
 end;
 
-function TfrmMain.ReturnIndex(AArray: TArrayRecord<TPersonRecord>;
+function TfrmSearch.ReturnIndex(AArray: TArrayRecord<TPersonRecord>;
   const AName: string): Integer;
 var
   I: Integer;
@@ -303,7 +303,7 @@ begin
   End;
 end;
 
-procedure TfrmMain.lstboxResultClick(Sender: TObject);
+procedure TfrmSearch.lstboxResultClick(Sender: TObject);
 var
   I, iIndex: Integer;
   sName: String;
@@ -321,7 +321,7 @@ begin
   End;
 end;
 
-procedure TfrmMain.lstboxResultDrawItem(Control: TWinControl; Index: Integer;
+procedure TfrmSearch.lstboxResultDrawItem(Control: TWinControl; Index: Integer;
   Rect: TRect; State: TOwnerDrawState);
 var
   TopDif: Integer;
@@ -353,24 +353,24 @@ begin
 
 end;
 
-procedure TfrmMain.N2Click(Sender: TObject);
+procedure TfrmSearch.N2Click(Sender: TObject);
 begin
   application.Terminate;
 end;
 
-procedure TfrmMain.OcsClick(Sender: TObject);
+procedure TfrmSearch.OcsClick(Sender: TObject);
 begin
   Ocs.Checked := True;
   BoolCaseSensitive := True;
 end;
 
-procedure TfrmMain.ONcsClick(Sender: TObject);
+procedure TfrmSearch.ONcsClick(Sender: TObject);
 begin
   ONcs.Checked := True;
   BoolCaseSensitive := false;
 end;
 
-procedure TfrmMain.DAllNameClick(Sender: TObject);
+procedure TfrmSearch.DAllNameClick(Sender: TObject);
 { TODO : Display all Name in listbox }
 var
   sX: string;
@@ -413,7 +413,7 @@ begin
 
 End;
 
-procedure TfrmMain.FiOldClick(Sender: TObject);
+procedure TfrmSearch.FiOldClick(Sender: TObject);
 var
   iOld: Integer;
 begin
@@ -445,14 +445,14 @@ begin
 
 end;
 
-procedure TfrmMain.ClearDetailInfo;
+procedure TfrmSearch.ClearDetailInfo;
 begin
   lblName.caption := '----';
   lblAge.caption := '----';
   lblProfession.caption := '----';
 end;
 
-procedure TfrmMain.FiYoungClick(Sender: TObject);
+procedure TfrmSearch.FiYoungClick(Sender: TObject);
 var
   iMin: Integer;
 begin
