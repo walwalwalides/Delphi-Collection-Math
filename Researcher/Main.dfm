@@ -31,7 +31,7 @@ object Form1: TForm1
   object lblAge: TLabel
     Left = 110
     Top = 229
-    Width = 47
+    Width = 32
     Height = 19
     Caption = 'Age'
     Font.Charset = DEFAULT_CHARSET
@@ -44,7 +44,7 @@ object Form1: TForm1
   object lblProfession: TLabel
     Left = 154
     Top = 283
-    Width = 47
+    Width = 85
     Height = 19
     Caption = 'Profession'
     Font.Charset = DEFAULT_CHARSET
@@ -166,6 +166,20 @@ object Form1: TForm1
         Caption = '&Information'
         ShortCut = 16457
         OnClick = I1Click
+      end
+    end
+    object miO: TMenuItem
+      Caption = '&Option'
+      object ONcs: TMenuItem
+        Caption = 'No Case Sensitive'
+        Checked = True
+        RadioItem = True
+        OnClick = ONcsClick
+      end
+      object Ocs: TMenuItem
+        Caption = 'Case Sensitive'
+        RadioItem = True
+        OnClick = OcsClick
       end
     end
   end

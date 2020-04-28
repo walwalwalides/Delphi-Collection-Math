@@ -14,7 +14,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
   System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, uRecordPerson, uClassPerson,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, uRecordPerson,
+  uClassPerson,
   Vcl.Menus;
 
 type
@@ -39,6 +40,9 @@ type
     miF: TMenuItem;
     FiOld: TMenuItem;
     FiYoung: TMenuItem;
+    miO: TMenuItem;
+    Ocs: TMenuItem;
+    ONcs: TMenuItem;
     procedure btnResultClick(Sender: TObject);
     procedure edtInputKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
@@ -53,9 +57,13 @@ type
     procedure DAllNameClick(Sender: TObject);
     procedure FiOldClick(Sender: TObject);
     procedure FiYoungClick(Sender: TObject);
+    procedure ONcsClick(Sender: TObject);
+    procedure OcsClick(Sender: TObject);
   private
     procedure SearchInListBox;
     procedure ClearDetailInfo;
+    function ReturnIndex(AArray: TArrayRecord<TPersonRecord>;
+      const AName: string): Integer;
     { Private-Deklarationen }
   public
     { Public-Deklarationen }
@@ -64,6 +72,7 @@ type
 var
   Form1: TForm1;
   BoolFound: Boolean = false;
+  BoolCaseSensitive: Boolean = false;
   arrInput: TArrayRecord<TPersonRecord>;
 
 implementation
@@ -148,13 +157,18 @@ end;
 procedure TForm1.SearchInListBox;
 var
   sX, sY, sResult, stmp: string;
-  I, m, n, iresult, itmp: Integer;
+  I, m, n, iresult, itmp, iIndex: Integer;
 
   sl: TStringList;
 begin
   BoolFound := false;
   if (edtInput.Text <> '') then
-    sX := edtInput.Text
+  Begin
+    if BoolCaseSensitive = false then
+      sX := lowercase(edtInput.Text)
+    else
+      sX := edtInput.Text;
+  End
   else
     exit;
   sl := TStringList.Create;
@@ -166,7 +180,10 @@ begin
   sResult := '';
   for I := 0 to arrInput.Count - 1 do
   Begin
-    sY := arrInput[I].Name;
+    if BoolCaseSensitive = false then
+      sY := lowercase(arrInput[I].Name) // extract name from list library
+    else
+      sY := arrInput[I].Name;
 
     m := length(sX);
     n := length(sY);
@@ -176,9 +193,10 @@ begin
     begin
       itmp := iresult;
       sl.Add(arrInput[I].Name);
-      if (iresult = m) and (iresult = n) then
+      if (iresult = m) and (iresult = n) then // found searching name
       Begin
-        sResult := stmp;
+        iIndex := ReturnIndex(arrInput, stmp);
+        sResult := arrInput[iIndex].Name;
         break
 
       End;
@@ -201,7 +219,7 @@ begin
     else
     Begin
       BoolFound := True;
-      lstboxResult.Items.Add(stmp);
+      lstboxResult.Items.Add(sResult);
     End;
   finally
     FreeAndNil(sl);
@@ -267,10 +285,10 @@ end;
 
 function CompareItemFunction(const Value: string): Boolean;
 begin
-  Result := LowerCase(Value) <> '';
+  Result := lowercase(Value) <> '';
 end;
 
-function ReturnIndex(AArray: TArrayRecord<TPersonRecord>;
+function TForm1.ReturnIndex(AArray: TArrayRecord<TPersonRecord>;
   const AName: string): Integer;
 var
   I: Integer;
@@ -278,7 +296,7 @@ begin
   Result := -1;
   for I := 0 to (AArray.Count - 1) do
   Begin
-    if (AArray[I].Name = AName) then
+    if (lowercase(AArray[I].Name) = lowercase(AName)) then
     Begin
       Result := I;
       break;
@@ -292,10 +310,10 @@ var
   sName: String;
 begin
 
-
   with lstboxResult do
   Begin
-    if ItemIndex<0 then exit;
+    if ItemIndex < 0 then
+      exit;
     lblName.caption := Items[ItemIndex];
     sName := lblName.caption;
     iIndex := ReturnIndex(arrInput, sName);
@@ -341,6 +359,16 @@ begin
   application.Terminate;
 end;
 
+procedure TForm1.OcsClick(Sender: TObject);
+begin
+  BoolCaseSensitive := True;
+end;
+
+procedure TForm1.ONcsClick(Sender: TObject);
+begin
+  BoolCaseSensitive := false;
+end;
+
 procedure TForm1.DAllNameClick(Sender: TObject);
 { TODO : Display all Name in listbox }
 var
@@ -349,7 +377,7 @@ var
   sl: TStringList;
 begin
   // sort the list before display
-  BoolFound:=false;
+  BoolFound := false;
   edtInput.Clear;
   arrInput.Sort(TPersonRecord.NameComparer);
 
@@ -390,14 +418,14 @@ var
 begin
   //
   arrInput.Sort(TPersonRecord.AgeComparer);
-  iold := arrInput.IndexOfMax(TPersonRecord.AgeComparer);
+  iOld := arrInput.IndexOfMax(TPersonRecord.AgeComparer);
   lstboxResult.Clear;
   ClearDetailInfo;
   try
 
     if (arrInput.Count > 0) then
     Begin
-      lstboxResult.Items.Add(arrInput[iold].Name);
+      lstboxResult.Items.Add(arrInput[iOld].Name);
       lstboxResult.SetFocus;
 
     End;
@@ -408,7 +436,7 @@ begin
     if lstboxResult.Items.Count > 0 then
     begin
       lstboxResult.Selected[0] := True;
-      lstboxResult.ItemIndex:=0;
+      lstboxResult.ItemIndex := 0;
       lstboxResultClick(nil);
 
     end;
@@ -418,11 +446,10 @@ end;
 
 procedure TForm1.ClearDetailInfo;
 begin
-  lblName.Caption:='----';
-  lblAge.Caption:='----';
-  lblProfession.Caption:='----';
+  lblName.caption := '----';
+  lblAge.caption := '----';
+  lblProfession.caption := '----';
 end;
-
 
 procedure TForm1.FiYoungClick(Sender: TObject);
 var
@@ -448,7 +475,7 @@ begin
     if lstboxResult.Items.Count > 0 then
     begin
       lstboxResult.Selected[0] := True;
-      lstboxResult.ItemIndex:=0;
+      lstboxResult.ItemIndex := 0;
       lstboxResultClick(nil);
 
     end;
