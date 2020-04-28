@@ -1,5 +1,5 @@
 # Researcher
-- Searching through a text file .    
+- Search and parse through text file .    
 
 ![](Researcher.png) 
 
