@@ -1,4 +1,4 @@
-object Form1: TForm1
+object frmMain: TfrmMain
   Left = 0
   Top = 0
   Caption = 'Researcher'
@@ -105,15 +105,6 @@ object Form1: TForm1
     OnKeyDown = edtInputKeyDown
     OnKeyPress = edtInputKeyPress
   end
-  object btnResult: TButton
-    Left = 8
-    Top = 429
-    Width = 75
-    Height = 25
-    Caption = 'Result'
-    TabOrder = 1
-    OnClick = btnResultClick
-  end
   object lstboxResult: TListBox
     AlignWithMargins = True
     Left = 3
@@ -122,13 +113,13 @@ object Form1: TForm1
     Height = 171
     Align = alTop
     ItemHeight = 13
-    TabOrder = 2
+    TabOrder = 1
     OnClick = lstboxResultClick
     OnDrawItem = lstboxResultDrawItem
   end
   object MainMenu: TMainMenu
-    Left = 245
-    Top = 408
+    Left = 5
+    Top = 272
     object miS: TMenuItem
       Caption = '&File'
       ShortCut = 16454
@@ -159,15 +150,6 @@ object Form1: TForm1
         end
       end
     end
-    object miA: TMenuItem
-      Caption = '&About'
-      ShortCut = 16449
-      object I1: TMenuItem
-        Caption = '&Information'
-        ShortCut = 16457
-        OnClick = I1Click
-      end
-    end
     object miO: TMenuItem
       Caption = '&Option'
       object ONcs: TMenuItem
@@ -180,6 +162,15 @@ object Form1: TForm1
         Caption = 'Case Sensitive'
         RadioItem = True
         OnClick = OcsClick
+      end
+    end
+    object miA: TMenuItem
+      Caption = '&About'
+      ShortCut = 16449
+      object I1: TMenuItem
+        Caption = '&Information'
+        ShortCut = 16457
+        OnClick = I1Click
       end
     end
   end

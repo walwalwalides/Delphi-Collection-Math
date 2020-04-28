@@ -19,9 +19,8 @@ uses
   Vcl.Menus;
 
 type
-  TForm1 = class(TForm)
+  TfrmMain = class(TForm)
     edtInput: TEdit;
-    btnResult: TButton;
     lstboxResult: TListBox;
     lblName: TLabel;
     lblAge: TLabel;
@@ -70,7 +69,7 @@ type
   end;
 
 var
-  Form1: TForm1;
+  frmMain: TfrmMain;
   BoolFound: Boolean = false;
   BoolCaseSensitive: Boolean = false;
   arrInput: TArrayRecord<TPersonRecord>;
@@ -154,7 +153,7 @@ begin
   end;
 end;
 
-procedure TForm1.SearchInListBox;
+procedure TfrmMain.SearchInListBox;
 var
   sX, sY, sResult, stmp: string;
   I, m, n, iresult, itmp, iIndex: Integer;
@@ -227,12 +226,12 @@ begin
 
 end;
 
-procedure TForm1.btnResultClick(Sender: TObject);
+procedure TfrmMain.btnResultClick(Sender: TObject);
 begin
   //
 end;
 
-procedure TForm1.edtInputChange(Sender: TObject);
+procedure TfrmMain.edtInputChange(Sender: TObject);
 begin
   if (edtInput.Text = '') then
   Begin
@@ -243,7 +242,7 @@ begin
     SearchInListBox;
 end;
 
-procedure TForm1.edtInputKeyDown(Sender: TObject; var Key: Word;
+procedure TfrmMain.edtInputKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
   if (Key = 13) then
@@ -254,7 +253,7 @@ begin
   Key := 0;
 end;
 
-procedure TForm1.edtInputKeyPress(Sender: TObject; var Key: Char);
+procedure TfrmMain.edtInputKeyPress(Sender: TObject; var Key: Char);
 begin
   if (Key = #13) then
   Begin
@@ -263,7 +262,7 @@ begin
   End;
 end;
 
-procedure TForm1.FormCreate(Sender: TObject);
+procedure TfrmMain.FormCreate(Sender: TObject);
 const
   cfLibrary = 'myLibrary.txt';
 begin
@@ -278,7 +277,7 @@ begin
 
 end;
 
-procedure TForm1.I1Click(Sender: TObject);
+procedure TfrmMain.I1Click(Sender: TObject);
 begin
   frmAbout.show;
 end;
@@ -288,7 +287,7 @@ begin
   Result := lowercase(Value) <> '';
 end;
 
-function TForm1.ReturnIndex(AArray: TArrayRecord<TPersonRecord>;
+function TfrmMain.ReturnIndex(AArray: TArrayRecord<TPersonRecord>;
   const AName: string): Integer;
 var
   I: Integer;
@@ -304,7 +303,7 @@ begin
   End;
 end;
 
-procedure TForm1.lstboxResultClick(Sender: TObject);
+procedure TfrmMain.lstboxResultClick(Sender: TObject);
 var
   I, iIndex: Integer;
   sName: String;
@@ -322,7 +321,7 @@ begin
   End;
 end;
 
-procedure TForm1.lstboxResultDrawItem(Control: TWinControl; Index: Integer;
+procedure TfrmMain.lstboxResultDrawItem(Control: TWinControl; Index: Integer;
   Rect: TRect; State: TOwnerDrawState);
 var
   TopDif: Integer;
@@ -354,22 +353,24 @@ begin
 
 end;
 
-procedure TForm1.N2Click(Sender: TObject);
+procedure TfrmMain.N2Click(Sender: TObject);
 begin
   application.Terminate;
 end;
 
-procedure TForm1.OcsClick(Sender: TObject);
+procedure TfrmMain.OcsClick(Sender: TObject);
 begin
+  Ocs.Checked := True;
   BoolCaseSensitive := True;
 end;
 
-procedure TForm1.ONcsClick(Sender: TObject);
+procedure TfrmMain.ONcsClick(Sender: TObject);
 begin
+  ONcs.Checked := True;
   BoolCaseSensitive := false;
 end;
 
-procedure TForm1.DAllNameClick(Sender: TObject);
+procedure TfrmMain.DAllNameClick(Sender: TObject);
 { TODO : Display all Name in listbox }
 var
   sX: string;
@@ -412,7 +413,7 @@ begin
 
 End;
 
-procedure TForm1.FiOldClick(Sender: TObject);
+procedure TfrmMain.FiOldClick(Sender: TObject);
 var
   iOld: Integer;
 begin
@@ -444,14 +445,14 @@ begin
 
 end;
 
-procedure TForm1.ClearDetailInfo;
+procedure TfrmMain.ClearDetailInfo;
 begin
   lblName.caption := '----';
   lblAge.caption := '----';
   lblProfession.caption := '----';
 end;
 
-procedure TForm1.FiYoungClick(Sender: TObject);
+procedure TfrmMain.FiYoungClick(Sender: TObject);
 var
   iMin: Integer;
 begin
