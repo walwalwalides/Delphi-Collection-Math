@@ -7,7 +7,7 @@
 # Features  
 
 - Serach item using "longest common sequences" function.
-- Compare items in lists using generic collections
+- Compare items in list using generic collections
 
 
 ## Files
