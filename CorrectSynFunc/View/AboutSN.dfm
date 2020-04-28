@@ -184,7 +184,7 @@ object frmAboutSN: TfrmAboutSN
     Height = 180
     Lines.Strings = (
       '        Software name    : '
-      '        MySpiralMatrix'
+      '        CorrectSynFunc'
       '        Software version : V1.0.0'
       ''
       ''

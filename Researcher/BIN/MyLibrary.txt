@@ -1,0 +1,8 @@
+Walid,15,Teacher
+Amine,20,Technician
+Ali,25,Laborer
+khaled,19,Physical
+
+
+
+
