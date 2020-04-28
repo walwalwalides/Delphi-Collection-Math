@@ -25,6 +25,7 @@ My Own Delphi-Collection ( Math )
 |[ParadoxBirthday](https://github.com/walwalwalides/Delphi-Collection-Math/tree/master/ParadoxBirthday)| Create Birthday Paradox Calculator.
 |[CorrectSynFunc](https://github.com/walwalwalides/Delphi-Collection-Math/tree/master/CorrectSynFunc)| Auto correct function syntax.
 |[JumbArray](https://github.com/walwalwalides/Delphi-Collection-Math/tree/master/JumbArray)| Create a jumb array.
+|[Researcher](https://github.com/walwalwalides/Delphi-Collection-Math/tree/master/Researcher)| Search and parse through text File.
 | README.md | The Readme for this Project|
 
 
