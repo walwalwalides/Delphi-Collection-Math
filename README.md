@@ -28,8 +28,16 @@ My Own Delphi-Collection ( Math )
 |[Researcher](https://github.com/walwalwalides/Delphi-Collection-Math/tree/master/Researcher)| Search and parse through text File.
 | README.md | The Readme for this Project|
 
-
 ------
+## Description
+"Delphi-Collection-Math" contain different examples base on VCL Frameworks.
+This Collection explore different types of themes in mathematics(Jump array,Detector function Syntax,Calculate Max Profit...).
+
+As always, if you have any ideas or suggestions that would make a exemple more interesting and useful for you and anyone interested,Please let me know. 
+You can reach me under email : walwalwalides@gmail.com ,or just text me.
+
+You are welcome to join and participate to improve any choosed exemple.
+
 
 # If You Want To Donate!
 
