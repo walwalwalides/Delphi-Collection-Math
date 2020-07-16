@@ -1,5 +1,5 @@
 # Delphi-Collection-Math
-My Own Delphi-Collection ( Math ) 
+- My Own Delphi-Collection ( Math ) 
 
 ![](Delphi-Collection-Math.jpg)
 **Authors:**  *WalWalWalides*
@@ -30,13 +30,13 @@ My Own Delphi-Collection ( Math )
 
 ------
 ## Description
-"Delphi-Collection-Math" contain different examples base on VCL Frameworks.
+- "Delphi-Collection-Math" contain different examples base on VCL Frameworks.
 This Collection explore different types of themes in mathematics(Jump array,Detector function Syntax,Calculate Max Profit...).
 
-As always, if you have any ideas or suggestions that would make a exemple more interesting and useful for you and anyone interested,Please let me know. 
+- As always, if you have any ideas or suggestions that would make a exemple more interesting and useful for you and anyone interested,Please let me know. 
 You can reach me under email : walwalwalides@gmail.com ,or just text me.
 
-You are welcome to join and participate to improve any choosed exemple.
+- You are welcome to join and participate to improve any choosed exemple.
 
 
 # If You Want To Donate!
