@@ -1,7 +1,10 @@
 # Delphi-Collection-Math
-- My Own Delphi-Collection ( Math ) 
+> My Own Delphi-Collection ( Math ) 
 
-![](Delphi-Collection-Math.jpg)
+<p align = "center">
+<img src=Delphi-Collection-Math.jpg />
+<p/>
+
 **Authors:**  *WalWalWalides*
 ------
 ![Platforms](https://img.shields.io/badge/Supported%20platforms-Win32%20and%20Win64-red.svg)
