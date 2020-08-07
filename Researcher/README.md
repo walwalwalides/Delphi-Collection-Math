@@ -1,7 +1,9 @@
 # Researcher
-- Search and parse through text file .    
+> Search and parse through text file .    
 
-![](Researcher.png) 
+<p align="Center">
+<img src=Researcher.png>
+<p/>
 
 
 # Features  
