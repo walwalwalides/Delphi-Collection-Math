@@ -1,7 +1,9 @@
 # MySpiralMatrix
-- Return all elements of the matrix in spiral order.    
+> Return all elements of the matrix in spiral order.    
 
-![](MySpiralMatrix.png) 
+<p align="Center">
+<img src= MySpiralMatrix.png >
+<p/>
 
 
 # Features  
