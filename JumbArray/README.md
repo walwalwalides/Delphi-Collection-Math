@@ -1,7 +1,9 @@
 # JumbArray
 > Create a Jumb Array.    
 
-![](jumbArray.png) 
+<p align="center">
+<img src=jumbArray.png >
+<p/>
 
 
 
