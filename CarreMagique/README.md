@@ -1,5 +1,5 @@
 # CarreMagique
-> Create Magic Square Solution Using Delphi - ( Dimension : 4/4)                     
+> Create Magic Square Solution Using Delphi - ( Dimension : 4/4 )                     
 
 <p align ="center">
 <img src=CarreMagique_.png>
