@@ -1,5 +1,5 @@
 # JumbArray
-- Create a Jumb Array.    
+> Create a Jumb Array.    
 
 ![](jumbArray.png) 
 
@@ -17,9 +17,9 @@
 
 | File | Contents | 
 | --- | --- |
-| .gitignore | Git ignores the files in this file |
 | AboutSN.pas | Information view of the programme |
 | uJumbArray.pas | JumbArray Unit |
 | jumbArray.dpk | The compiler project file |
 | jumbArray.dproj | The MSBUILD project file |
 | README.md | The readme for this project |
+| .gitignore | Git ignores the files in this file |
