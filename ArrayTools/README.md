@@ -11,9 +11,10 @@
 
 # Features  
 
--  Rotate a array of integer.
--  Merge two sorted arrays of integer.
--  Increment one to the Tlist<integer>.
+-  Rotate a Array of integer.
+-  Merge two sorted Arrays of integer.
+-  Increment one to the TList<integer>.
+-  Delete the shortest Subarray and Show a increment Array.  
 
 
 
