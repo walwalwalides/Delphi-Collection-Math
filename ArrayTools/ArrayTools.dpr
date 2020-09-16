@@ -3,7 +3,8 @@ program ArrayTools;
 uses
   Vcl.Forms,
   Test in 'Test.pas' {frmTest},
-  uDynArrTools in 'uDynArrTools.pas';
+  uDynArrTools in 'uDynArrTools.pas',
+  uAbout in 'ABOUT\uAbout.pas' {frmAbout};
 
 {$R *.res}
 

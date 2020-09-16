@@ -14,7 +14,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
   System.Classes, Vcl.Graphics, System.generics.collections,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Menus;
 
 type
   TfrmTest = class(TForm)
@@ -24,12 +24,22 @@ type
     btnShortestSubArray: TButton;
     btnSum: TButton;
     btnAdd1: TButton;
+    MainMenu1: TMainMenu;
+    File1: TMenuItem;
+    OpenFiles1: TMenuItem;
+    N1: TMenuItem;
+    A2: TMenuItem;
+    miAbout: TMenuItem;
+    miExit: TMenuItem;
     procedure btnSort2ArrayClick(Sender: TObject);
     procedure btnIncArrayClick(Sender: TObject);
     procedure btnRotateClick(Sender: TObject);
     procedure btnShortestSubArrayClick(Sender: TObject);
     procedure btnSumClick(Sender: TObject);
     procedure btnAdd1Click(Sender: TObject);
+    procedure miAboutClick(Sender: TObject);
+    procedure miExitClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     procedure DisplayArrayOfInteger(var A: array of integer);
     procedure DisplayListOfInteger(var A: TList<integer>);
@@ -45,10 +55,9 @@ implementation
 
 {$R *.dfm}
 
-uses uDynArrtools, System.math;
+uses uDynArrtools, System.math, uAbout;
 
-
-//Migrate two increasing integer array
+// Migrate two increasing integer array
 procedure TfrmTest.btnSort2ArrayClick(Sender: TObject);
 var
   A: array of integer;
@@ -86,9 +95,9 @@ procedure TfrmTest.btnShortestSubArrayClick(Sender: TObject);
 var
   A: array of integer;
   lenA: integer;
-  k: Integer;
+  k: integer;
 begin
-  //To do
+  // To do
   exit;
   lenA := 5;
   SetLength(A, lenA);
@@ -98,17 +107,14 @@ begin
   A[3] := 3;
   A[4] := 1;
 
-
   k := findShortestSubArray(A);
-
 
   ShowMessage(k.ToString);
   // DisplayArrayOfInteger(A);
 
 end;
 
-
-//Sum of 3 element egal a 0
+// Sum of 3 element egal a 0
 procedure TfrmTest.btnSumClick(Sender: TObject);
 var
   I: integer;
@@ -118,8 +124,8 @@ var
 begin
   TestList := TList<integer>.create;
 
-//  TestList.add(0);
-//  TestList.add(0);
+  // TestList.add(0);
+  // TestList.add(0);
   TestList.add(3);
   TestList.add(-1);
   TestList.add(-1);
@@ -131,8 +137,8 @@ begin
     DisplayListOfInteger(ResultList);
 
   finally
-     ResultList.Free;
-     TestList.Free;
+    ResultList.Free;
+    TestList.Free;
   end;
 
   // Input: nums = [-1,0,1,2,-1,-4]
@@ -140,8 +146,21 @@ begin
 
 end;
 
+// increment one to the Tlist<integer>.
+procedure TfrmTest.miAboutClick(Sender: TObject);
+var
+  f: TfrmAbout;
+begin
+  if Assigned(f) then
+    Application.CreateForm(TfrmAbout, f);
+  f.Position := poMainFormCenter;
+  try
+    f.ShowModal;
+  finally
+    FreeAndNil(f);
+  end;
+end;
 
-//increment one to the Tlist<integer>.
 procedure TfrmTest.btnAdd1Click(Sender: TObject);
 var
   I: integer;
@@ -149,19 +168,19 @@ var
   TestList: TList<integer>;
 begin
   TestList := TList<integer>.create;
-//      4,3,2,1    -> result should be : 4322
-//  TestList.add(4);
-//  TestList.add(3);
-//  TestList.add(2);
-    TestList.add(9);
-    TestList.add(9);
+  // 4,3,2,1    -> result should be : 4322
+  // TestList.add(4);
+  // TestList.add(3);
+  // TestList.add(2);
+  TestList.add(9);
+  TestList.add(9);
   TestList := plusOne(TestList);
 
   try
     DisplayListOfInteger(TestList);
 
   finally
-     TestList.Free;
+    TestList.Free;
   end;
 
 end;
@@ -195,7 +214,7 @@ begin
 
 end;
 
-//Rotate Array
+// Rotate Array
 procedure TfrmTest.btnRotateClick(Sender: TObject);
 var
   A: array of integer;
@@ -214,18 +233,16 @@ begin
   DisplayArrayOfInteger(A);
 end;
 
-
-
 {$REGION 'Display_Result'}
 
-//Display List of integer
+// Display List of integer
 procedure TfrmTest.DisplayListOfInteger(var A: TList<integer>);
 var
   strResult: string;
   I: integer;
 
 Begin
-  for I := 0 to A.Count-1 do
+  for I := 0 to A.Count - 1 do
   Begin
     strResult := strResult + ' | ' + (A[I]).ToString;
 
@@ -236,8 +253,18 @@ Begin
 
 End;
 
+procedure TfrmTest.FormCreate(Sender: TObject);
+begin
+  self.Color := clwhite;
+  self.Caption:='ArrayTools';
+end;
 
-//Display array of integer
+procedure TfrmTest.miExitClick(Sender: TObject);
+begin
+  Application.Terminate;
+end;
+
+// Display array of integer
 procedure TfrmTest.DisplayArrayOfInteger(var A: array of integer);
 var
   strResult: string;
@@ -255,8 +282,6 @@ Begin
 
 End;
 
-
 {$ENDREGION}
-
 
 end.

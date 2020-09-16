@@ -1,11 +1,11 @@
 { ============================================
-  Software Name : 	CarreMagique
+  Unit Name : 	uDynArrTools
   ============================================ }
 { ******************************************** }
-{ Written By WalWalWalides                     }
-{ CopyRight © 2019                             }
-{ Email : WalWalWalides@gmail.com              }
-{ GitHub :https://github.com/walwalwalides     }
+{ Written By WalWalWalides }
+{ CopyRight © 2020 }
+{ Email : WalWalWalides@gmail.com }
+{ GitHub :https://github.com/walwalwalides }
 { ******************************************** }
 
 unit uAbout;
@@ -15,7 +15,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Imaging.pngimage,
-  Vcl.ExtCtrls, ShellApi, acPNG;
+  Vcl.ExtCtrls, ShellApi, dxGDIPlusClasses;
 
 type
   TfrmAbout = class(TForm)

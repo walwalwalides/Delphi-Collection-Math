@@ -1,15 +1,19 @@
-# JumbArray
-- Create a Jumb Array.    
+# ArrayTools
+> Array of unit.    
 
-![](jumbArray.png) 
+<p align="Center">
+<img src=ArrayTools.png>
+<p/>
+
 
 
 
 
 # Features  
 
--  Count number of ways to jump to reach end.
--  Min number of Jumps to reach end.
+-  Rotate a array of integer.
+-  Merge two sorted arrays of integer.
+-  Increment one to the Tlist<integer>.
 
 
 
@@ -18,8 +22,8 @@
 | File | Contents | 
 | --- | --- |
 | .gitignore | Git ignores the files in this file |
-| AboutSN.pas | Information view of the programme |
-| uJumbArray.pas | JumbArray Unit |
-| jumbArray.dpk | The compiler project file |
-| jumbArray.dproj | The MSBUILD project file |
+| About.pas | Information view of the programme |
+| uArrayTools.pas | Unit ArrayTools |
+| ArrayTools.dpk | The compiler project file |
+| ArrayTools.dproj | The MSBUILD project file |
 | README.md | The readme for this project |
