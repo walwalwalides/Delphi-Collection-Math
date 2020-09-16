@@ -1,6 +1,9 @@
 # PradoxBirthday
-- Create Birthday Paradox Calculator.                                                              
-![](ParadoxBirthday_.png) 
+> Create Birthday Paradox Calculator.    
+
+<p align="Center">
+<img src=ParadoxBirthday_.png>
+<p/>
 
 
 

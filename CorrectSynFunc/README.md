@@ -1,7 +1,9 @@
 # CoorectSynFunc
-- Auto correct function syntax.    
+> Auto correct function syntax.    
 
-![](CorrectSynfunc.png) 
+<p align="Center">
+<img src=CorrectSynfunc.png>
+<p/>
 
 # View
 - CorrectSynfunc :

@@ -1,5 +1,5 @@
 # ProfitWTrans
-- Calculate Max Profit With x Numbers of Transactions Using Delphi.
+> Calculate Max Profit With x Numbers of Transactions Using Delphi.
                                                               
 ![](ProfitWTrans.png) 
 

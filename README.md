@@ -1,7 +1,10 @@
 # Delphi-Collection-Math
-- My Own Delphi-Collection ( Math ) 
+> My Own Delphi-Collection ( Math ) 
 
-![](Delphi-Collection-Math.jpg)
+<p align = "center">
+<img src=Delphi-Collection-Math.jpg />
+<p/>
+
 **Authors:**  *WalWalWalides*
 ------
 ![Platforms](https://img.shields.io/badge/Supported%20platforms-Win32%20and%20Win64-red.svg)
@@ -17,7 +20,6 @@
 
 | File | Contents | 
 | --- | --- |
-| .gitignore | Git ignores the Files in this File |
 |[CarreMagique](https://github.com/walwalwalides/Delphi-Collection-Math/tree/master/CarreMagique)| Create Magic Square Solution Using Delphi 
 |[CalculSum](https://github.com/walwalwalides/Delphi-Collection-Math/tree/master/CalculSum)| A simpler Way To Write Addition Operations Using Object Oriented Programming (OOPs)
 |[ProfitWTrans](https://github.com/walwalwalides/Delphi-Collection-Math/tree/master/ProfitWTrans)| Calculate Max Profit With x Numbers of Transactions Using Delphi.
@@ -27,6 +29,8 @@
 |[JumbArray](https://github.com/walwalwalides/Delphi-Collection-Math/tree/master/JumbArray)| Create a jumb array.
 |[Researcher](https://github.com/walwalwalides/Delphi-Collection-Math/tree/master/Researcher)| Search and parse through text File.
 | README.md | The Readme for this Project|
+| .gitignore | Git ignores the Files in this File |
+
 
 ------
 ## Description
