@@ -28,7 +28,6 @@ object frmTest: TfrmTest
     Caption = 'Sort2Array'
     TabOrder = 0
     OnClick = btnSort2ArrayClick
-    ExplicitTop = 533
   end
   object btnIncArray: TButton
     Left = 192
@@ -39,7 +38,6 @@ object frmTest: TfrmTest
     Caption = 'IncArray'
     TabOrder = 1
     OnClick = btnIncArrayClick
-    ExplicitTop = 533
   end
   object btnRotate: TButton
     Left = 100
@@ -50,7 +48,6 @@ object frmTest: TfrmTest
     Caption = 'RotateArray'
     TabOrder = 2
     OnClick = btnRotateClick
-    ExplicitTop = 533
   end
   object btnShortestSubArray: TButton
     Left = 284
@@ -61,7 +58,6 @@ object frmTest: TfrmTest
     Caption = 'ShortSubArray'
     TabOrder = 3
     OnClick = btnShortestSubArrayClick
-    ExplicitTop = 533
   end
   object btnSum: TButton
     Left = 376
@@ -72,7 +68,6 @@ object frmTest: TfrmTest
     Caption = 'Sum'
     TabOrder = 4
     OnClick = btnSumClick
-    ExplicitTop = 533
   end
   object btnAdd1: TButton
     Left = 468
@@ -83,11 +78,19 @@ object frmTest: TfrmTest
     Caption = 'Add One'
     TabOrder = 5
     OnClick = btnAdd1Click
-    ExplicitTop = 533
+  end
+  object btnBlockArray: TButton
+    Left = 8
+    Top = 482
+    Width = 86
+    Height = 25
+    Caption = 'BlockArray'
+    TabOrder = 6
+    OnClick = btnBlockArrayClick
   end
   object MainMenu1: TMainMenu
-    Left = 144
-    Top = 368
+    Left = 344
+    Top = 176
     object File1: TMenuItem
       Caption = 'File'
       object OpenFiles1: TMenuItem

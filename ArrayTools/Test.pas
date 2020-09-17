@@ -31,6 +31,7 @@ type
     A2: TMenuItem;
     miAbout: TMenuItem;
     miExit: TMenuItem;
+    btnBlockArray: TButton;
     procedure btnSort2ArrayClick(Sender: TObject);
     procedure btnIncArrayClick(Sender: TObject);
     procedure btnRotateClick(Sender: TObject);
@@ -40,6 +41,7 @@ type
     procedure miAboutClick(Sender: TObject);
     procedure miExitClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure btnBlockArrayClick(Sender: TObject);
   private
     procedure DisplayArrayOfInteger(var A: array of integer);
     procedure DisplayListOfInteger(var A: TList<integer>);
@@ -145,6 +147,43 @@ begin
   // Output: [[-1,-1,2],[-1,0,1]]
 
 end;
+
+procedure TfrmTest.btnBlockArrayClick(Sender: TObject);
+
+var
+  I: integer;
+  strResult: string;
+  TestList1: TList<integer>;
+  TestList2: TList<integer>;
+
+  ResultList: TList<integer>;
+begin
+  TestList1 := TList<integer>.create;
+
+  TestList1.add(3);
+  TestList1.add(-1);
+  TestList1.add(-7);
+  TestList1.add(-2);
+
+  TestList2 := TList<integer>.create;
+  TestList2.add(1);
+  TestList2.add(0);
+  TestList2.add(1);
+  TestList2.add(0);
+
+  ResultList := NegativePrefix(TestList1,TestList2);
+
+  try
+    DisplayListOfInteger(ResultList);
+
+  finally
+    ResultList.Free;
+    TestList1.Free;
+    TestList2.Free;
+  end;
+
+end;
+
 
 // increment one to the Tlist<integer>.
 procedure TfrmTest.miAboutClick(Sender: TObject);
@@ -256,7 +295,7 @@ End;
 procedure TfrmTest.FormCreate(Sender: TObject);
 begin
   self.Color := clwhite;
-  self.Caption:='ArrayTools';
+  self.Caption := 'ArrayTools';
 end;
 
 procedure TfrmTest.miExitClick(Sender: TObject);

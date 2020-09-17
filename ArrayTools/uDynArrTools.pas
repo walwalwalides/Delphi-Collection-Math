@@ -19,6 +19,7 @@ uses
 type
   TXArray = array of integer;
 
+  // Array of integer
 procedure mergeSortedArray(var A: array of integer; m: integer;
   var B: array of integer; n: integer);
 
@@ -28,8 +29,12 @@ procedure rotateArray(var arr: array of integer; const n: integer);
 function findLengthOfShortestSubarray(var arr: TXArray): integer;
 function findShortestSubArray(var arr: array of integer): integer;
 
+// TList<Integer>
 function ThreeSum(var AList: TList<integer>): TList<integer>;
 function plusOne(var AList: TList<integer>): TList<integer>;
+
+function NegativePrefix(var AList: TList<integer>; var ABlock: TList<integer>;
+const Direction: integer = 0): TList<integer>;
 
 implementation
 
@@ -137,9 +142,7 @@ begin
   End;
 end;
 
-
-
-//Delete the shortest subarray & show a incremented array
+// Delete the shortest subarray & show a incremented array
 function findLengthOfShortestSubarray(var arr: TXArray): integer;
 var
   n, ans, last, first: integer;
@@ -185,7 +188,6 @@ Begin
 end;
 
 {$ENDREGION}
-
 // Sort array of integer from a to b
 
 procedure partSort(var arr: array of integer; n: integer; A, B: integer);
@@ -255,7 +257,6 @@ Begin
   end;
 
 end;
-
 
 function findShortestSubArray(var arr: array of integer): integer;
 var
@@ -343,8 +344,6 @@ Begin
 
 end;
 
-
-
 function ThreeSum(var AList: TList<integer>): TList<integer>;
 const
   target = 0;
@@ -407,6 +406,54 @@ Begin
 
   End;
   result := BList;
+
+End;
+
+function NegativePrefix(var AList: TList<integer>; var ABlock: TList<integer>;
+const Direction: integer = 0): TList<integer>;
+var
+  Comparison: TComparison<integer>;
+  x: integer;
+  i: integer;
+Begin
+  if (AList.Count <> AList.Count) then
+    exit;
+  result := TList<integer>.Create;
+
+  x := 0;
+  for i := 0 to AList.Count - 1 do
+  Begin
+    if (ABlock[i] = 0) then
+    Begin
+      result.Add(AList[i]);
+      inc(x);
+    end;
+  end;
+
+  Comparison := function(const Left, Right: integer): integer
+    begin
+
+      case Direction of
+        - 1:
+          result := Right - Left;   //decrease
+        0:
+          result := Left - Right;   //increase
+
+      end;
+
+    end;
+  result.Sort(TComparer<integer>.Construct(Comparison));
+
+  if (x < AList.Count) then
+    for i := 0 to AList.Count - 1 do
+    Begin
+      if (ABlock[i] = 1) then
+      Begin
+        result.Insert(i, AList[i]);
+
+      end;
+
+    end;
 
 End;
 
