@@ -28,7 +28,7 @@
 |[CorrectSynFunc](https://github.com/walwalwalides/Delphi-Collection-Math/tree/master/CorrectSynFunc)| Auto correct function syntax.
 |[JumbArray](https://github.com/walwalwalides/Delphi-Collection-Math/tree/master/JumbArray)| Create a jumb array.
 |[Researcher](https://github.com/walwalwalides/Delphi-Collection-Math/tree/master/Researcher)| Search and parse through text File.
-|[ArrayTools](https://github.com/walwalwalides/Delphi-Collection-Math/tree/master/ArrayTools)| Array tools unit.
+|[ArrayTools](https://github.com/walwalwalides/Delphi-Collection-Math/tree/master/ArrayTools)| ArrayHelper Unit.
 | README.md | The Readme for this Project|
 | .gitignore | Git ignores the Files in this File |
 
