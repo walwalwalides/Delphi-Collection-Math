@@ -88,6 +88,15 @@ object frmTest: TfrmTest
     TabOrder = 6
     OnClick = btnBlockArrayClick
   end
+  object Button1: TButton
+    Left = 100
+    Top = 482
+    Width = 86
+    Height = 25
+    Caption = 'Button1'
+    TabOrder = 7
+    OnClick = Button1Click
+  end
   object MainMenu1: TMainMenu
     Left = 344
     Top = 176

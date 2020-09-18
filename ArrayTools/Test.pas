@@ -32,6 +32,7 @@ type
     miAbout: TMenuItem;
     miExit: TMenuItem;
     btnBlockArray: TButton;
+    Button1: TButton;
     procedure btnSort2ArrayClick(Sender: TObject);
     procedure btnIncArrayClick(Sender: TObject);
     procedure btnRotateClick(Sender: TObject);
@@ -42,6 +43,7 @@ type
     procedure miExitClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure btnBlockArrayClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
   private
     procedure DisplayArrayOfInteger(var A: array of integer);
     procedure DisplayListOfInteger(var A: TList<integer>);
@@ -148,6 +150,60 @@ begin
 
 end;
 
+procedure TfrmTest.Button1Click(Sender: TObject);
+var
+  n, nbUnhappyF: integer;
+  preferences: TMArray;
+  pairs: TMArray;
+begin
+  //
+  n := 4;
+  SetLength(preferences, 4);
+
+  SetLength(preferences[0], 3);
+  SetLength(preferences[1], 3);
+  SetLength(preferences[2], 3);
+  SetLength(preferences[3], 3);
+
+  preferences[0][0] := 1;
+  preferences[0][1] := 3;
+  preferences[0][2] := 2;
+
+  preferences[1][0] := 2;
+  preferences[1][1] := 3;
+  preferences[1][2] := 0;
+
+  preferences[2][0] := 1;
+  preferences[2][1] := 3;
+  preferences[2][2] := 0;
+
+  preferences[3][0] := 0;
+  preferences[3][1] := 2;
+  preferences[3][2] := 1;
+
+
+//    [[1, 3, 2], [2, 3, 0], [1, 3, 0], [0, 2, 1]], pairs = [[1, 3], [0, 2]]
+
+  // { preferences := {{1, 2, 3},{3, 2, 0},{3, 1, 0},{1, 2, 0}};}
+
+  SetLength(pairs, 2);
+
+  // Set the length of the 3 sub-arrays to different sizes
+  SetLength(pairs[0], 2);
+  SetLength(pairs[1], 2);
+  // SetLength(pairs[2], 2);
+
+  pairs[0][0] := 1;
+  pairs[0][1] := 3;
+  pairs[1][0] := 0;
+  pairs[1][1] := 2;
+
+  nbUnhappyF := unhappyFriends(n, preferences, pairs);
+
+  showmessage(nbUnhappyF.ToString);
+
+end;
+
 procedure TfrmTest.btnBlockArrayClick(Sender: TObject);
 
 var
@@ -171,7 +227,7 @@ begin
   TestList2.add(1);
   TestList2.add(0);
 
-  ResultList := NegativePrefix(TestList1,TestList2);
+  ResultList := NegativePrefix(TestList1, TestList2);
 
   try
     DisplayListOfInteger(ResultList);
@@ -183,7 +239,6 @@ begin
   end;
 
 end;
-
 
 // increment one to the Tlist<integer>.
 procedure TfrmTest.miAboutClick(Sender: TObject);

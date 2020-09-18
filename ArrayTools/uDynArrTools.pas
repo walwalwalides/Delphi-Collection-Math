@@ -18,7 +18,7 @@ uses
 
 type
   TXArray = array of integer;
-
+  TMArray = array of array of integer;
   // Array of integer
 procedure mergeSortedArray(var A: array of integer; m: integer;
   var B: array of integer; n: integer);
@@ -34,7 +34,11 @@ function ThreeSum(var AList: TList<integer>): TList<integer>;
 function plusOne(var AList: TList<integer>): TList<integer>;
 
 function NegativePrefix(var AList: TList<integer>; var ABlock: TList<integer>;
-const Direction: integer = 0): TList<integer>;
+  const Direction: integer = 0): TList<integer>;
+
+//
+function unhappyFriends(var n: integer; var preferences: TMArray;
+  var pairs: TMArray): integer;
 
 implementation
 
@@ -412,14 +416,14 @@ End;
 function NegativePrefix(var AList: TList<integer>; var ABlock: TList<integer>;
 const Direction: integer = 0): TList<integer>;
 var
-  Comparison: TComparison<integer>;
+  comparison: TComparison<integer>;
   x: integer;
   i: integer;
 Begin
   if (AList.Count <> AList.Count) then
     exit;
-  result := TList<integer>.Create;
 
+  result := TList<integer>.Create;
   x := 0;
   for i := 0 to AList.Count - 1 do
   Begin
@@ -430,23 +434,25 @@ Begin
     end;
   end;
 
-  Comparison := function(const Left, Right: integer): integer
+  comparison := function(const Left, Right: integer): integer
     begin
 
       case Direction of
         - 1:
-          result := Right - Left;   //decrease
+          result := Right - Left; // decrease
         0:
-          result := Left - Right;   //increase
+          result := Left - Right; // increase
 
       end;
 
     end;
-  result.Sort(TComparer<integer>.Construct(Comparison));
+  result.Sort(TComparer<integer>.Construct(comparison));
 
   if (x < AList.Count) then
+
     for i := 0 to AList.Count - 1 do
     Begin
+
       if (ABlock[i] = 1) then
       Begin
         result.Insert(i, AList[i]);
@@ -456,5 +462,139 @@ Begin
     end;
 
 End;
+
+function unhappyFriends(var n: integer; var preferences: TMArray;
+var pairs: TMArray): integer;
+var
+  unhappy: integer;
+  index_of_preference: TDictionary<integer, TDictionary<integer, integer>>;
+  pairs_map, o_index, s: TDictionary<integer, integer>;
+  no_of_pairs: integer;
+  preferences_i: TList<integer>;
+  i, u, v, k: integer;
+  t, h, x, y: integer;
+  condition_1: Boolean;
+  condition_2: Boolean;
+  A, B: integer;
+Begin
+
+  unhappy := 0;
+
+  // create a map for each pair
+  pairs_map := TDictionary<integer, integer>.Create;
+
+  no_of_pairs := high(pairs);
+
+  for i := 0 to no_of_pairs do
+  Begin
+    pairs_map.Add(pairs[i][0], pairs[i][1]);
+    pairs_map.Add(pairs[i][1], pairs[i][0]);
+
+  End;
+
+  // for each friend create the map, whose value is again a map of friendNumber as key and the serial number in
+  // preference list
+  index_of_preference := TDictionary < integer, TDictionary < integer,
+    integer >>.Create;
+
+  for i := 0 to n - 1 do
+  Begin
+    // if (o_index <>nil)then
+    // freeandnil(o_index);
+      //destroy dictionary after create ....
+
+    o_index := TDictionary<integer, integer>.Create;
+
+
+    for t := 0 to n - 2 do
+      o_index.Add(preferences[i][t], t);
+    try
+      index_of_preference.Add(i, o_index);
+    finally
+      // freeandnil(o_index)
+    end;
+  end;
+
+  // check for each friend whether he is happy or unhapppy
+  for i := 0 to n - 1 do
+  Begin
+
+    // now i is our x
+    x := i;
+
+    // now paired friend of x is our y
+    y := pairs_map[x];
+
+    // preferences_i is the preference list of ith friend
+
+    // if not assigned(preferences_i)then
+    // freeandnil(preferences_i);
+    preferences_i := TList<integer>.Create;
+    for h := 0 to n - 2 do
+    begin
+      preferences_i.Add(preferences[i][h]);
+    end;
+
+    // x prefers u over y
+    condition_1 := true;
+
+    // u prefers x over v
+    condition_2 := true;
+
+    // initially all friends are happy
+    // check for each friend whether he is happy unhappy
+
+    for k := 0 to n - 1 do
+    Begin
+      u := preferences_i[k];
+      v := pairs_map[u];
+
+      // if u is not equals to y that means u is prefered before y
+      // so we need to check second condition
+      if (u <> y) then
+      begin
+        // if (s <>nil)then
+        // freeandnil(s);
+        s := TDictionary<integer, integer>.Create;
+
+        s := index_of_preference[u];
+        A := s[x];
+        B := s[v];
+
+        if (A < B) then
+        Begin
+          condition_1 := false;
+          condition_2 := false;
+        End;
+
+      end
+      else
+      begin
+        // if u==y first condition is true
+        break;
+      end;
+
+      if ((condition_1 = false) and (condition_2 = false)) then
+      begin
+        inc(unhappy);
+        break;
+      end;
+
+    end;
+
+  end;
+
+  try
+    freeandnil(index_of_preference);
+    freeandnil(pairs_map);
+    freeandnil(o_index);
+    freeandnil(preferences_i);
+    freeandnil(s);
+
+  finally
+    result := unhappy;
+  end;
+
+end;
 
 end.
