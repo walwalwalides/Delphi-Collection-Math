@@ -1,5 +1,5 @@
 # ArrayTools
-> Array of unit.    
+> ArrayHelper unit.    
 
 <p align="Center">
 <img src=ArrayTools.png>
